@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#101421"
+    tools:context=".join">
+
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="아이디"
+        android:textColor="#FAF8F8"
+        app:layout_constraintStart_toStartOf="@+id/edt_join_id"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+    <TextView
+        android:id="@+id/tv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="비밀번호"
+        android:textColor="#FAF8F8"
+        app:layout_constraintStart_toStartOf="@+id/edt_join_id"
+        app:layout_constraintTop_toBottomOf="@+id/edt_join_id" />
+
+    <TextView
+        android:id="@+id/tv3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="이   름"
+        android:textColor="#FAF9F9"
+        app:layout_constraintStart_toStartOf="@+id/edt_join_pw"
+        app:layout_constraintTop_toBottomOf="@+id/edt_join_pw" />
+
+    <TextView
+        android:id="@+id/tv4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Phone"
+        android:textColor="#FAF9F9"
+        app:layout_constraintStart_toStartOf="@+id/edt_join_name"
+        app:layout_constraintTop_toBottomOf="@+id/edt_join_name" />
+
+    <TextView
+        android:id="@+id/tv5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Email"
+        android:textColor="#FAF9F9"
+        app:layout_constraintStart_toStartOf="@+id/edt_join_phone"
+        app:layout_constraintTop_toBottomOf="@+id/edt_join_phone" />
+
+    <TextView
+        android:id="@+id/tv6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="닉네임"
+        android:textColor="#FAF9F9"
+        app:layout_constraintStart_toStartOf="@+id/edt_join_email"
+        app:layout_constraintTop_toBottomOf="@+id/edt_join_email" />
+
+    <EditText
+        android:id="@+id/edt_join_pw"
+        android:layout_width="260dp"
+        android:layout_height="45dp"
+        android:backgroundTint="@color/white"
+        android:ems="10"
+        android:hint="비밀번호를 입력해주세요."
+        android:inputType="textPassword"
+        android:textColor="#FAF8F8"
+        android:textColorHint="#FAF9F9"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/tv2"
+        app:layout_constraintTop_toBottomOf="@+id/tv2" />
+
+    <EditText
+        android:id="@+id/edt_join_id"
+        android:layout_width="260dp"
+        android:layout_height="45dp"
+        android:backgroundTint="@color/white"
+        android:ems="10"
+        android:hint="아이디를 입력해주세요."
+        android:inputType="textPersonName"
+        android:textColor="#FAF8F8"
+        android:textColorHint="#FAF9F9"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv1" />
+
+    <EditText
+        android:id="@+id/edt_join_name"
+        android:layout_width="260dp"
+        android:layout_height="45dp"
+        android:backgroundTint="@color/white"
+        android:ems="10"
+        android:hint="이름을 입력해주세요."
+        android:inputType="textPersonName"
+        android:textColor="#FAF8F8"
+        android:textColorHint="#FAF9F9"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/tv3"
+        app:layout_constraintTop_toBottomOf="@+id/tv3" />
+
+    <EditText
+        android:id="@+id/edt_join_phone"
+        android:layout_width="260dp"
+        android:layout_height="45dp"
+        android:backgroundTint="@color/white"
+        android:ems="10"
+        android:hint="휴대폰번호를 입력해주세요."
+        android:inputType="textPersonName"
+        android:textColor="#FAF8F8"
+        android:textColorHint="#FAF9F9"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/tv4"
+        app:layout_constraintTop_toBottomOf="@+id/tv4" />
+
+    <EditText
+        android:id="@+id/edt_join_email"
+        android:layout_width="260dp"
+        android:layout_height="45dp"
+        android:backgroundTint="@color/white"
+        android:ems="10"
+        android:hint="Email을 입력해주세요."
+        android:inputType="textPersonName"
+        android:textColor="#FAF8F8"
+        android:textColorHint="#FAF9F9"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/tv5"
+        app:layout_constraintTop_toBottomOf="@+id/tv5" />
+
+    <EditText
+        android:id="@+id/edt_join_nickname"
+        android:layout_width="260dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="1dp"
+        android:backgroundTint="@color/white"
+        android:ems="10"
+        android:hint="리그오브레전드 닉네임을 입력해주세요."
+        android:inputType="textPersonName"
+        android:textColor="#FAF8F8"
+        android:textColorHint="#FAF9F9"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/tv6"
+        app:layout_constraintTop_toBottomOf="@+id/tv6" />
+
+    <Button
+        android:id="@+id/btn_join_create"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="CREATE"
+        app:backgroundTint="#838080"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_join_nickname" />
+
+    <Button
+        android:id="@+id/btn_join_kakao"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:text="카카오톡으로 회원가입하기"
+        app:backgroundTint="#838080"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_join_create" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo_white" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Game Champion"
+        android:textColor="#F8F5F5"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

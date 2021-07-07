@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#101421"
+    tools:context=".id_find">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            app:srcCompat="@drawable/logo_white" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Game Champion"
+            android:textColor="#F8F5F5"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:gravity="center_horizontal"
+            android:text="비밀번호 찾기"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center_horizontal"
+            android:text="회원님의 비밀번호를 찾을 수 있도록"
+            android:textColor="#FFFFFF" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="center_horizontal"
+            android:text=" 아이디, 이메일, 전화번호를 입력해주세요."
+            android:textColor="#FFFFFF" />
+
+        <TextView
+            android:id="@+id/tv"
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="40dp"
+            android:paddingLeft="5dp"
+            android:text="아이디"
+            android:textColor="#FAF9F9" />
+
+        <EditText
+            android:id="@+id/edt_join_name2"
+            android:layout_width="260dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center_horizontal"
+            android:backgroundTint="@color/white"
+            android:ems="10"
+            android:hint="ID를 입력해주세요."
+            android:inputType="textPersonName"
+            android:textColor="#FAF8F8"
+            android:textColorHint="#FAF9F9"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv8"
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:paddingLeft="5dp"
+            android:text="Email"
+            android:textColor="#FAF9F9" />
+
+        <EditText
+            android:id="@+id/edt_join_email2"
+            android:layout_width="260dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center_horizontal"
+            android:backgroundTint="@color/white"
+            android:ems="10"
+            android:hint="Email을 입력해주세요."
+            android:inputType="textPersonName"
+            android:textColor="#FAF8F8"
+            android:textColorHint="#FAF9F9"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv7"
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:paddingLeft="5dp"
+            android:text="Phone"
+            android:textColor="#FAF9F9" />
+
+        <EditText
+            android:id="@+id/edt_join_phone2"
+            android:layout_width="260dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center_horizontal"
+            android:backgroundTint="@color/white"
+            android:ems="10"
+            android:hint="휴대폰번호를 입력해주세요."
+            android:inputType="textPersonName"
+            android:textColor="#FAF8F8"
+            android:textColorHint="#FAF9F9"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="50dp"
+            android:text="찾기"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            app:backgroundTint="#F3F3F3" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
