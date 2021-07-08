@@ -157,24 +157,12 @@
         android:id="@+id/btn_join_create"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="30dp"
         android:text="CREATE"
         app:backgroundTint="#838080"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edt_join_nickname" />
-
-    <Button
-        android:id="@+id/btn_join_kakao"
-        android:layout_width="300dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="10dp"
-        android:text="카카오톡으로 회원가입하기"
-        app:backgroundTint="#838080"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_join_create" />
 
     <ImageView
         android:id="@+id/imageView"
