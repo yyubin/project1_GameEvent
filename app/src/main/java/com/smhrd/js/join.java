@@ -76,7 +76,7 @@ public class join extends AppCompatActivity {
                         startActivity(intent);
 
 
-                    } else if (value.equals("faill")) {
+                    } else if (value.equals("fail")) {
                         Toast.makeText(getApplicationContext(), "회원가입에 실패했습니다.", Toast.LENGTH_SHORT).show();
 
 
