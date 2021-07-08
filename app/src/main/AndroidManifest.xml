@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.smhrd.js">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <application
         android:allowBackup="true"
@@ -15,26 +15,27 @@
         android:usesCleartextTraffic="true">
 
         <activity android:name=".ranking"></activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".join">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
-        <activity android:name=".join" >
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".Login"></activity>
+        <activity android:name=".MainPage"></activity>
+        <activity android:name=".free_board"></activity>
+        <activity android:name=".id_find"></activity>
+        <activity android:name=".pw_find"></activity>
+        <activity android:name=".CreateTeam"></activity>
+        <activity android:name=".battle_attend"></activity>
+        <activity android:name=".chatting"></activity>
+        <activity android:name=".Survival"></activity>
+        <activity android:name=".Table"></activity>
+        <activity android:name=".Grouppage"></activity>
+        <activity android:name=".Mypage"></activity>
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-        </activity>
-        <activity android:name=".Login" />
-        <activity android:name=".MainPage" />
-        <activity android:name=".free_board" />
-        <activity android:name=".id_find" />
-        <activity android:name=".pw_find" />
-        <activity android:name=".CreateTeam" />
-        <activity android:name=".battle_attend" />
-        <activity android:name=".chatting" />
-        <activity android:name=".Survival" />
-        <activity android:name=".Table" />
     </application>
 
 </manifest>
