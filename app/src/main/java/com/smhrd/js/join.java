@@ -60,7 +60,7 @@ public class join extends AppCompatActivity {
     }
     public void sendRequest() {
         queue = Volley.newRequestQueue(this);
-        String url = "http://121.147.52.82:3100/Join";
+        String url = "http://59.0.234.45:3100/Join";
         stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
