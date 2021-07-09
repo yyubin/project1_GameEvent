@@ -317,22 +317,6 @@
                             android:textColor="#000000"
                             android:textSize="16sp" />
 
-                        <TextView
-                            android:id="@+id/textView75"
-                            android:layout_width="160dp"
-                            android:layout_height="wrap_content"
-                            android:gravity="right"
-                            android:text="5"
-                            android:textColor="#000000"
-                            android:textSize="20sp" />
-
-                        <ImageView
-                            android:id="@+id/imageView27"
-                            android:layout_width="20dp"
-                            android:layout_height="25dp"
-                            android:layout_gravity="left"
-                            app:srcCompat="@drawable/arrow_red" />
-
                     </LinearLayout>
 
                     <View
