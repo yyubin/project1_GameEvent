@@ -112,10 +112,11 @@ public class Login extends AppCompatActivity {
                         String lol_name = jsonObject.getString("member_lol_name");
                         String phone = jsonObject.getString("member_phone");
                         String email = jsonObject.getString("member_email");
-                        MemberDTO dto = new MemberDTO(id,pw,name,phone,lol_name,email);
+                        MemberDTO dto = new MemberDTO(id, pw, name, phone, lol_name, email);
                         Gson gson = new Gson();
                         String member = gson.toJson(dto);
-                        PreferenceManager.setString(getApplicationContext(),"login",member);
+                        PreferenceManager.setString(getApplicationContext(),"login", member);
+                        Log.v("sss",member);
                         Toast.makeText(getApplicationContext(), "로그인에 성공했습니다.", Toast.LENGTH_SHORT).show();
 
 

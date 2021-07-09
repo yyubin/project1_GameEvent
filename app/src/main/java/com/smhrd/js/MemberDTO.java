@@ -1,29 +1,28 @@
 package com.smhrd.js;
 
-import java.io.Serializable;
+public class MemberDTO {
 
-public class MemberDTO implements Serializable {
-    private String id;
-    private String pw;
-    private String name;
-    private String email;
-    private String phone;
-    private String nickname;
+        private String id;
+        private String pw;
+        private String name;
+        private String tel;
+        private String lol_name;
+        private String email;
 
-    public MemberDTO(String id, String pw, String name, String email, String phone, String nickname) {
+    public MemberDTO(String id, String pw, String name, String tel, String lol_name, String email) {
         this.id = id;
         this.pw = pw;
         this.name = name;
+        this.tel = tel;
+        this.lol_name = lol_name;
         this.email = email;
-        this.phone = phone;
-        this.nickname = nickname;
     }
 
-    public MemberDTO(String id, String pw, String name, String nickname) {
-        this.id = id;
-        this.pw = pw;
+    public MemberDTO(String name, String tel, String lol_name, String email) {
         this.name = name;
-        this.nickname = nickname;
+        this.tel = tel;
+        this.lol_name = lol_name;
+        this.email = email;
     }
 
     public String getId() {
@@ -50,27 +49,27 @@ public class MemberDTO implements Serializable {
         this.name = name;
     }
 
+    public String getTel() {
+        return tel;
+    }
+
+    public void setTel(String tel) {
+        this.tel = tel;
+    }
+
+    public String getLol_name() {
+        return lol_name;
+    }
+
+    public void setLol_name(String lol_name) {
+        this.lol_name = lol_name;
+    }
+
     public String getEmail() {
         return email;
     }
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
-    public String getNickname() {
-        return nickname;
-    }
-
-    public void setNickname(String nickname) {
-        this.nickname = nickname;
     }
 }
