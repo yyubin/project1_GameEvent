@@ -1,6 +1,11 @@
 package com.smhrd.js;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -12,6 +17,8 @@ public class MainActivity extends AppCompatActivity {
     private FragmentA fragmentA;
     private FragmentB fragmentB;
     private FragmentC fragmentC;
+    private ConstraintLayout layout;
+
 
     private Bundle bundle;
 
@@ -26,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         fragmentB = new FragmentB();
         fragmentC = new FragmentC();
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.frag, fragmentA).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.frag, fragmentB).commit();
         //fragment를 총괄 관리해주는 매니저
 
         navi.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -43,11 +50,22 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
+
+
+
+
+
+
+
     }
+
+
+
 
     public void setBundle(Bundle bundle){
         this.bundle = bundle;
     }
+
     public Bundle getBundle(){
         return bundle;
     }

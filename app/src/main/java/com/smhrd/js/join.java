@@ -38,26 +38,22 @@ public class join extends AppCompatActivity {
         setContentView(R.layout.activity_join);
 
         edt_join_id = findViewById(R.id.edt_join_id);
-        edt_join_pw = findViewById(R.id.edt_join_id);
+        edt_join_pw = findViewById(R.id.edt_join_pw);
         edt_join_name = findViewById(R.id.edt_join_name);
         edt_join_phone = findViewById(R.id.edt_join_phone);
-        edt_join_email = findViewById(R.id.edt_join_phone);
-        edt_join_nickname = findViewById(R.id.edt_join_phone);
+        edt_join_email = findViewById(R.id.edt_join_email);
+        edt_join_nickname = findViewById(R.id.edt_join_nickname);
 
         btn_join_create = findViewById(R.id.btn_join_create);
 
         btn_join_create.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (edt_join_id.equals("") || edt_join_pw.equals("") || edt_join_name.equals("") || edt_join_phone.equals("") || edt_join_email.equals("") || edt_join_nickname.equals("")) {
-                    Toast.makeText(getApplicationContext(), "모든 필수정보를 전부 다 입력한 다음 다시 시도하세요.", Toast.LENGTH_SHORT).show();
-                } else {
-                    sendRequest();
-                }
+                sendRequest();
             }
         });
-
     }
+
     public void sendRequest() {
         queue = Volley.newRequestQueue(this);
         String url = "http://59.0.234.45:3100/Join";
@@ -72,13 +68,17 @@ public class join extends AppCompatActivity {
                     String value = jsonObject.getString("check");
                     Log.v("resultValue", value);
                     if (value.equals("ok")) {
-                        Intent intent = new Intent(getApplicationContext(), joinsuccess.class);
+                        Intent intent = new Intent(getApplicationContext(), join_success.class);
                         startActivity(intent);
-
-
                     } else if (value.equals("fail")) {
                         Toast.makeText(getApplicationContext(), "회원가입에 실패했습니다.", Toast.LENGTH_SHORT).show();
 
+                        edt_join_id.setText("");
+                        edt_join_pw.setText("");
+                        edt_join_name.setText("");
+                        edt_join_phone.setText("");
+                        edt_join_email.setText("");
+                        edt_join_nickname.setText("");
 
                     }
                 } catch (JSONException e) {

@@ -68,20 +68,6 @@
         app:layout_constraintTop_toBottomOf="@+id/edt_join_email" />
 
     <EditText
-        android:id="@+id/edt_join_pw"
-        android:layout_width="260dp"
-        android:layout_height="45dp"
-        android:backgroundTint="@color/white"
-        android:ems="10"
-        android:hint="비밀번호를 입력해주세요."
-        android:inputType="textPassword"
-        android:textColor="#FAF8F8"
-        android:textColorHint="#FAF9F9"
-        android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="@+id/tv2"
-        app:layout_constraintTop_toBottomOf="@+id/tv2" />
-
-    <EditText
         android:id="@+id/edt_join_id"
         android:layout_width="260dp"
         android:layout_height="45dp"
@@ -95,6 +81,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv1" />
+
+    <EditText
+        android:id="@+id/edt_join_pw"
+        android:layout_width="260dp"
+        android:layout_height="45dp"
+        android:backgroundTint="@color/white"
+        android:ems="10"
+        android:hint="비밀번호를 입력해주세요."
+        android:inputType="textPassword"
+        android:textColor="#FAF8F8"
+        android:textColorHint="#FAF9F9"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/tv2"
+        app:layout_constraintTop_toBottomOf="@+id/tv2" />
 
     <EditText
         android:id="@+id/edt_join_name"
@@ -111,20 +111,6 @@
         app:layout_constraintTop_toBottomOf="@+id/tv3" />
 
     <EditText
-        android:id="@+id/edt_join_phone"
-        android:layout_width="260dp"
-        android:layout_height="45dp"
-        android:backgroundTint="@color/white"
-        android:ems="10"
-        android:hint="휴대폰번호를 입력해주세요."
-        android:inputType="textPersonName"
-        android:textColor="#FAF8F8"
-        android:textColorHint="#FAF9F9"
-        android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="@+id/tv4"
-        app:layout_constraintTop_toBottomOf="@+id/tv4" />
-
-    <EditText
         android:id="@+id/edt_join_email"
         android:layout_width="260dp"
         android:layout_height="45dp"
@@ -137,6 +123,20 @@
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="@+id/tv5"
         app:layout_constraintTop_toBottomOf="@+id/tv5" />
+
+    <EditText
+        android:id="@+id/edt_join_phone"
+        android:layout_width="260dp"
+        android:layout_height="45dp"
+        android:backgroundTint="@color/white"
+        android:ems="10"
+        android:hint="휴대폰번호를 입력해주세요."
+        android:inputType="textPersonName"
+        android:textColor="#FAF8F8"
+        android:textColorHint="#FAF9F9"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/tv4"
+        app:layout_constraintTop_toBottomOf="@+id/tv4" />
 
     <EditText
         android:id="@+id/edt_join_nickname"
@@ -157,7 +157,7 @@
         android:id="@+id/btn_join_create"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="10dp"
         android:text="CREATE"
         app:backgroundTint="#838080"
         app:layout_constraintEnd_toEndOf="parent"

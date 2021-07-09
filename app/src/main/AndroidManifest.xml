@@ -13,29 +13,33 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.JS"
         android:usesCleartextTraffic="true">
+        <activity android:name=".join_success">
 
-        <activity android:name=".ranking"></activity>
-        <activity android:name=".MainActivity"></activity>
+        </activity>
+
+        <activity android:name=".ranking" />
+        <activity android:name=".MainActivity" />
         <activity android:name=".join">
+
+        </activity>
+        <activity android:name=".Login" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Login"></activity>
-        <activity android:name=".MainPage"></activity>
-        <activity android:name=".free_board"></activity>
-        <activity android:name=".id_find"></activity>
-        <activity android:name=".pw_find"></activity>
-        <activity android:name=".CreateTeam"></activity>
-        <activity android:name=".battle_attend"></activity>
-        <activity android:name=".chatting"></activity>
-        <activity android:name=".Survival"></activity>
-        <activity android:name=".Table"></activity>
-        <activity android:name=".Grouppage"></activity>
-        <activity android:name=".Mypage"></activity>
 
+        <activity android:name=".free_board" />
+        <activity android:name=".id_find" />
+        <activity android:name=".pw_find" />
+        <activity android:name=".CreateTeam" />
+        <activity android:name=".battle_attend" />
+        <activity android:name=".chatting" />
+        <activity android:name=".Survival" />
+        <activity android:name=".Table" />
+        <activity android:name=".Grouppage" />
+        <activity android:name=".Mypage" />
     </application>
 
 </manifest>
