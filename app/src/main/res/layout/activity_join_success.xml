@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#101421"
     android:orientation="vertical"
-    tools:context=".join_success">
+    tools:context="joinsuccess">
 
     <LinearLayout
         android:layout_width="match_parent"
