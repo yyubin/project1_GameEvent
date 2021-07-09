@@ -93,7 +93,7 @@ public class Login extends AppCompatActivity {
 
     public void sendRequest() {
         queue = Volley.newRequestQueue(this);
-        String url = "http://121.147.52.82:3100/Login";
+        String url = "http://59.0.234.45:3100/Login";
         stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
@@ -105,7 +105,7 @@ public class Login extends AppCompatActivity {
                     String value = jsonObject.getString("check");
 
                     Log.v("resultValue", value);
-                    if (value.equals("t")) {
+                    if (value.equals("true")) {
                         String id = jsonObject.getString("member_id");
                         String pw = jsonObject.getString("member_pw");
                         String name = jsonObject.getString("member_name");
@@ -125,7 +125,7 @@ public class Login extends AppCompatActivity {
 
 
 
-                    } else if (value.equals("f")) {
+                    } else if (value.equals("null")) {
                         Toast.makeText(getApplicationContext(), "로그인에 실패했습니다.", Toast.LENGTH_SHORT).show();
 
 

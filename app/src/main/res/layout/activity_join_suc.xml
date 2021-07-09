@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#101421"
     android:orientation="vertical"
-    tools:context="joinsuccess">
+    tools:context=".JoinSuc">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -56,7 +56,7 @@
         android:orientation="vertical">
 
         <Button
-            android:id="@+id/button6"
+            android:id="@+id/btn_join_success_login_go"
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:layout_marginLeft="60dp"

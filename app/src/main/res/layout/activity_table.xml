@@ -20,10 +20,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_battle_attend" />
+        />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btn_submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="등록"
@@ -35,7 +35,7 @@
         app:layout_constraintTop_toTopOf="@+id/button" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/edt_table_text"
         android:layout_width="330dp"
         android:layout_height="271dp"
         android:background="@drawable/border"
@@ -110,7 +110,7 @@
         app:layout_constraintTop_toTopOf="@+id/tv_board_title" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/edt_table_title"
         android:layout_width="330dp"
         android:layout_height="30dp"
         android:background="@drawable/border"
@@ -134,10 +134,10 @@
         app:backgroundTint="#939292"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button2"
+        app:layout_constraintEnd_toStartOf="@+id/btn_submit"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2"
+        app:layout_constraintTop_toBottomOf="@+id/edt_table_text"
         app:layout_constraintVertical_bias="0.447" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
