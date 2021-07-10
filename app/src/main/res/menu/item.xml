@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:title="경기장"
+        android:title="마이페이지"
         android:id="@+id/page1"
         android:icon="@android:drawable/ic_menu_mylocation"
     />

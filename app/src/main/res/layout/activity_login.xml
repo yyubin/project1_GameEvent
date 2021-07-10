@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#101421"
+    android:backgroundTint="#101421"
     tools:context=".Login">
 
     <LinearLayout
@@ -81,17 +82,38 @@
                 app:backgroundTint="#838080" />
         </LinearLayout>
 
-        <Button
-            android:id="@+id/btn_id_pw_find"
-            android:layout_width="200dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="30dp"
-            android:background="#00FFFFFF"
-            android:text="아이디 / 비밀번호 찾기"
-            android:textColor="#F8F5F5"
-            app:backgroundTint="#FBF9F9"
-            app:iconTint="#FBF8F8" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_find1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00292121"
+                android:backgroundTint="#006E4C4C"
+                android:gravity="right"
+                android:text="아이디" />
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="10dp"
+                android:layout_height="wrap_content"
+                android:text="/"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/btn_find2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00292121"
+                android:backgroundTint="#006E4C4C"
+                android:gravity="left"
+                android:text="비밀번호 찾기" />
+        </LinearLayout>
 
     </LinearLayout>
 

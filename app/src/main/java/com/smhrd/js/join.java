@@ -38,11 +38,11 @@ public class join extends AppCompatActivity {
         setContentView(R.layout.activity_join);
 
         edt_join_id = findViewById(R.id.edt_join_id);
-        edt_join_pw = findViewById(R.id.edt_join_id);
+        edt_join_pw = findViewById(R.id.edt_join_pw);
         edt_join_name = findViewById(R.id.edt_join_name);
         edt_join_phone = findViewById(R.id.edt_join_phone);
-        edt_join_email = findViewById(R.id.edt_join_phone);
-        edt_join_nickname = findViewById(R.id.edt_join_phone);
+        edt_join_email = findViewById(R.id.edt_join_email);
+        edt_join_nickname = findViewById(R.id.edt_join_nickname);
 
         btn_join_create = findViewById(R.id.btn_join_create);
 
@@ -60,7 +60,7 @@ public class join extends AppCompatActivity {
     }
     public void sendRequest() {
         queue = Volley.newRequestQueue(this);
-        String url = "http://59.0.234.45:3100/Join";
+        String url = "http://121.147.52.82:3100/Join";
         stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {

@@ -34,11 +34,12 @@
             android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="30dp"
             android:gravity="center_horizontal"
             android:text="아이디 찾기"
             android:textColor="#FFFFFF"
-            android:textSize="34sp" />
+            android:textSize="30sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/textView4"
@@ -53,8 +54,9 @@
             android:id="@+id/textView6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
             android:gravity="center_horizontal"
-            android:text=" 이름, 이메일, 휴대전화번호를 입력해주세요."
+            android:text=" 이름, 이메일, 전화번호를 입력해주세요."
             android:textColor="#FFFFFF" />
 
         <TextView
@@ -64,7 +66,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="40dp"
             android:paddingLeft="5dp"
-            android:text="이   름"
+            android:text="이름"
             android:textColor="#FAF9F9" />
 
         <EditText
@@ -85,7 +87,7 @@
             android:layout_width="260dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:paddingLeft="5dp"
             android:text="Email"
             android:textColor="#FAF9F9" />
@@ -108,7 +110,7 @@
             android:layout_width="260dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:paddingLeft="5dp"
             android:text="Phone"
             android:textColor="#FAF9F9" />
@@ -127,11 +129,11 @@
             android:textSize="14sp" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/btn_id_find"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="50dp"
             android:text="찾기"
             android:textColor="#000000"
             android:textStyle="bold"

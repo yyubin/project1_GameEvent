@@ -30,7 +30,7 @@ import android.content.SharedPreferences;
 
 public class Login extends AppCompatActivity {
     private EditText edt_login_id, edt_login_pw;
-    private Button btn_login, btn_join_go, btn_id_pw_find;
+    private Button btn_login, btn_join_go, btn_find1,btn_find2;
 
     private RequestQueue queue;
     private StringRequest stringRequest;
@@ -46,9 +46,11 @@ public class Login extends AppCompatActivity {
         edt_login_id = findViewById(R.id.edt_login_id);
         edt_login_pw = findViewById(R.id.edt_login_pw);
 
+
         btn_login = findViewById(R.id.btn_login);
         btn_join_go = findViewById(R.id.btn_join_go);
-        btn_id_pw_find = findViewById(R.id.btn_id_pw_find);
+        btn_find1=findViewById(R.id.btn_find1);
+        btn_find2=findViewById(R.id.btn_find2);
 
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,26 +68,22 @@ public class Login extends AppCompatActivity {
             }
         });
 
-        btn_id_pw_find.setOnClickListener(new View.OnClickListener() {
+        btn_find1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),id_find.class);
+                startActivity(intent);
 
             }
         });
+        btn_find2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),pw_find.class);
+                startActivity(intent);
+            }
+        });
 
-        String login = PreferenceManager.getString(getApplicationContext(),"login");
-
-        try {
-            JSONObject jsonObject = new JSONObject(login);
-
-            String id = jsonObject.getString("id");
-            String pw = jsonObject.getString("pw");
-            edt_login_id.setText(id);
-            edt_login_pw.setText(pw);
-
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
 
 
 
@@ -93,7 +91,7 @@ public class Login extends AppCompatActivity {
 
     public void sendRequest() {
         queue = Volley.newRequestQueue(this);
-        String url = "http://59.0.234.45:3100/Login";
+        String url = "http://121.147.52.82:3100/Login";
         stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
@@ -105,7 +103,7 @@ public class Login extends AppCompatActivity {
                     String value = jsonObject.getString("check");
 
                     Log.v("resultValue", value);
-                    if (value.equals("true")) {
+                    if (value.equals("t")) {
                         String id = jsonObject.getString("member_id");
                         String pw = jsonObject.getString("member_pw");
                         String name = jsonObject.getString("member_name");
@@ -125,7 +123,7 @@ public class Login extends AppCompatActivity {
 
 
 
-                    } else if (value.equals("null")) {
+                    } else if (value.equals("f")) {
                         Toast.makeText(getApplicationContext(), "로그인에 실패했습니다.", Toast.LENGTH_SHORT).show();
 
 
