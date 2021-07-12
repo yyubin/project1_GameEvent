@@ -60,210 +60,182 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
-                        <ImageView
-                            android:id="@+id/imageView26"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:srcCompat="@drawable/teamtable" />
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
 
-                        <TextView
-                            android:id="@+id/textView51"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="50dp"
-                            android:layout_marginTop="43dp"
-                            android:text="강주성"
-                            android:textColor="#000000"
-                            android:textSize="18sp"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="@+id/imageView26" />
+                            <ImageView
+                                android:id="@+id/imageView26"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                app:srcCompat="@drawable/teamtable" />
 
-                        <TextView
-                            android:id="@+id/textView64"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="80dp"
-                            android:text="TOP"
-                            android:textColor="#000000"
-                            android:textSize="18sp"
-                            app:layout_constraintBottom_toBottomOf="@+id/textView51"
-                            app:layout_constraintStart_toEndOf="@+id/textView51"
-                            app:layout_constraintTop_toTopOf="@+id/textView51"
-                            app:layout_constraintVertical_bias="0.0" />
+                            <LinearLayout
+                                android:layout_width="120dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="16dp"
+                                android:orientation="vertical">
 
-                        <TextView
-                            android:id="@+id/textView67"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="80dp"
-                            android:text="MID"
-                            android:textColor="#000000"
-                            android:textSize="18sp"
-                            app:layout_constraintBottom_toBottomOf="@+id/textView61"
-                            app:layout_constraintStart_toEndOf="@+id/textView61"
-                            app:layout_constraintTop_toTopOf="@+id/textView61"
-                            app:layout_constraintVertical_bias="0.0" />
+                                <TextView
+                                    android:id="@+id/fragb_tv_1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginTop="43dp"
+                                    android:textColor="#000000"
+                                    android:textSize="18sp" />
 
-                        <TextView
-                            android:id="@+id/textView68"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="84dp"
-                            android:text="AD"
-                            android:textColor="#000000"
-                            android:textSize="18sp"
-                            app:layout_constraintBottom_toBottomOf="@+id/textView62"
-                            app:layout_constraintStart_toEndOf="@+id/textView62"
-                            app:layout_constraintTop_toTopOf="@+id/textView62"
-                            app:layout_constraintVertical_bias="0.0" />
+                                <TextView
+                                    android:id="@+id/fragb_tv_2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginTop="8dp"
+                                    android:textColor="#000000"
+                                    android:textSize="18sp" />
 
-                        <TextView
-                            android:id="@+id/textView69"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="80dp"
-                            android:text="SUP"
-                            android:textColor="#000000"
-                            android:textSize="18sp"
-                            app:layout_constraintBottom_toBottomOf="@+id/textView63"
-                            app:layout_constraintStart_toEndOf="@+id/textView63"
-                            app:layout_constraintTop_toTopOf="@+id/textView63"
-                            app:layout_constraintVertical_bias="0.0" />
+                                <TextView
+                                    android:id="@+id/fragb_tv_3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginTop="9dp"
+                                    android:textColor="#000000"
+                                    android:textSize="18sp" />
 
-                        <TextView
-                            android:id="@+id/textView66"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="80dp"
-                            android:text="JUG"
-                            android:textColor="#000000"
-                            android:textSize="18sp"
-                            app:layout_constraintBottom_toBottomOf="@+id/textView52"
-                            app:layout_constraintStart_toEndOf="@+id/textView52"
-                            app:layout_constraintTop_toTopOf="@+id/textView52"
-                            app:layout_constraintVertical_bias="0.0" />
+                                <TextView
+                                    android:id="@+id/fragb_tv_4"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginTop="8dp"
+                                    android:textColor="#000000"
+                                    android:textSize="18sp" />
 
-                        <TextView
-                            android:id="@+id/textView65"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="GOLD"
-                            android:textColor="#000000"
-                            android:textSize="18sp"
-                            app:layout_constraintBottom_toBottomOf="@+id/textView64"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintHorizontal_bias="0.535"
-                            app:layout_constraintStart_toEndOf="@+id/textView64"
-                            app:layout_constraintTop_toTopOf="@+id/textView64"
-                            app:layout_constraintVertical_bias="0.0" />
+                                <TextView
+                                    android:id="@+id/fragb_tv_5"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginTop="10dp"
+                                    android:textColor="#000000"
+                                    android:textSize="18sp" />
 
-                        <TextView
-                            android:id="@+id/textView70"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="SILVER"
-                            android:textColor="#000000"
-                            android:textSize="18sp"
-                            app:layout_constraintBottom_toBottomOf="@+id/textView66"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintHorizontal_bias="0.537"
-                            app:layout_constraintStart_toEndOf="@+id/textView66"
-                            app:layout_constraintTop_toTopOf="@+id/textView66"
-                            app:layout_constraintVertical_bias="0.0" />
+                            </LinearLayout>
 
-                        <TextView
-                            android:id="@+id/textView71"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="GOLD"
-                            android:textColor="#000000"
-                            android:textSize="18sp"
-                            app:layout_constraintBottom_toBottomOf="@+id/textView67"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintHorizontal_bias="0.548"
-                            app:layout_constraintStart_toEndOf="@+id/textView67"
-                            app:layout_constraintTop_toTopOf="@+id/textView67"
-                            app:layout_constraintVertical_bias="0.0" />
+                            <LinearLayout
+                                android:layout_width="120dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="255dp"
+                                android:orientation="vertical">
 
-                        <TextView
-                            android:id="@+id/textView72"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="BRONZE"
-                            android:textColor="#000000"
-                            android:textSize="18sp"
-                            app:layout_constraintBottom_toBottomOf="@+id/textView68"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintHorizontal_bias="0.608"
-                            app:layout_constraintStart_toEndOf="@+id/textView68"
-                            app:layout_constraintTop_toTopOf="@+id/textView68"
-                            app:layout_constraintVertical_bias="0.0" />
+                                <TextView
+                                    android:id="@+id/fragb_tear_1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginTop="43dp"
+                                    android:textColor="#000000"
+                                    android:textSize="18sp" />
 
-                        <TextView
-                            android:id="@+id/textView73"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="PLATINUM"
-                            android:textColor="#000000"
-                            android:textSize="18sp"
-                            app:layout_constraintBottom_toBottomOf="@+id/textView69"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintHorizontal_bias="0.58"
-                            app:layout_constraintStart_toEndOf="@+id/textView69"
-                            app:layout_constraintTop_toTopOf="@+id/textView69"
-                            app:layout_constraintVertical_bias="0.0" />
+                                <TextView
+                                    android:id="@+id/fragb_tear_2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginTop="8dp"
+                                    android:textColor="#000000"
+                                    android:textSize="18sp" />
 
-                        <TextView
-                            android:id="@+id/textView52"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="50dp"
-                            android:layout_marginTop="8dp"
-                            android:text="조영민"
-                            android:textColor="#000000"
-                            android:textSize="18sp"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/textView51" />
+                                <TextView
+                                    android:id="@+id/fragb_tear_3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginTop="9dp"
+                                    android:textColor="#000000"
+                                    android:textSize="18sp" />
 
-                        <TextView
-                            android:id="@+id/textView61"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="50dp"
-                            android:layout_marginTop="8dp"
-                            android:text="박유빈"
-                            android:textColor="#000000"
-                            android:textSize="18sp"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/textView52" />
+                                <TextView
+                                    android:id="@+id/fragb_tear_4"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginTop="8dp"
+                                    android:textColor="#000000"
+                                    android:textSize="18sp" />
 
-                        <TextView
-                            android:id="@+id/textView62"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="50dp"
-                            android:layout_marginTop="8dp"
-                            android:text="김대호"
-                            android:textColor="#000000"
-                            android:textSize="18sp"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/textView61" />
+                                <TextView
+                                    android:id="@+id/fragb_tear_5"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginTop="10dp"
+                                    android:textColor="#000000"
+                                    android:textSize="18sp" />
 
-                        <TextView
-                            android:id="@+id/textView63"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="50dp"
-                            android:layout_marginTop="8dp"
-                            android:text="남호윤"
-                            android:textColor="#000000"
-                            android:textSize="18sp"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/textView62" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="120dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="134dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/textView64"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginTop="43dp"
+                                    android:text="TOP"
+                                    android:textColor="#000000"
+                                    android:textSize="18sp" />
+
+                                <TextView
+                                    android:id="@+id/textView66"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginTop="8dp"
+                                    android:text="JUG"
+                                    android:textColor="#000000"
+                                    android:textSize="18sp" />
+
+                                <TextView
+                                    android:id="@+id/textView67"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginTop="9dp"
+                                    android:text="MID"
+                                    android:textColor="#000000"
+                                    android:textSize="18sp" />
+
+                                <TextView
+                                    android:id="@+id/textView68"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginTop="8dp"
+                                    android:text="AD"
+                                    android:textColor="#000000"
+                                    android:textSize="18sp" />
+
+                                <TextView
+                                    android:id="@+id/textView69"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginTop="10dp"
+                                    android:text="SUP"
+                                    android:textColor="#000000"
+                                    android:textSize="18sp" />
+
+                            </LinearLayout>
+
+                        </FrameLayout>
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -300,11 +272,11 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/member_lol_name"
+                            android:id="@+id/my_team_name"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="30dp"
-                            android:text="영민맨과 아이들"
+                            android:text="현재 소속팀이 없습니다."
                             android:textColor="#000000"
                             android:textSize="18sp" />
 
@@ -313,7 +285,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"
-                            android:text="(17)"
+                            android:text="(0)"
                             android:textColor="#000000"
                             android:textSize="16sp" />
 
@@ -350,7 +322,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="30dp"
-                        android:text="실버대회"
+                        android:text="현재 참여중인 대회가 없습니다."
                         android:textColor="#000000"
                         android:textSize="18sp" />
 

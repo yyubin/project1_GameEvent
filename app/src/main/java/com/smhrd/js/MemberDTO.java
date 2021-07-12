@@ -8,21 +8,24 @@ public class MemberDTO {
         private String tel;
         private String lol_name;
         private String email;
+        private String team_name;
 
-    public MemberDTO(String id, String pw, String name, String tel, String lol_name, String email) {
+    public MemberDTO(String id, String pw, String name, String tel, String lol_name, String email, String team_name) {
         this.id = id;
         this.pw = pw;
         this.name = name;
         this.tel = tel;
         this.lol_name = lol_name;
         this.email = email;
+        this.team_name = team_name;
     }
 
-    public MemberDTO(String name, String tel, String lol_name, String email) {
-        this.name = name;
-        this.tel = tel;
-        this.lol_name = lol_name;
-        this.email = email;
+    public String getTeam_name() {
+        return team_name;
+    }
+
+    public void setTeam_name(String team_name) {
+        this.team_name = team_name;
     }
 
     public String getId() {

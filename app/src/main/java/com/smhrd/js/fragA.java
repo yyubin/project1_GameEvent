@@ -25,7 +25,6 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.google.gson.Gson;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -49,7 +48,7 @@ public class fragA extends Fragment {
         View fragment = inflater.inflate(R.layout.frag_a, container, false);
 
         member_name=fragment.findViewById(R.id.member_name);
-        member_lol_name=fragment.findViewById(R.id.member_lol_name);
+        member_lol_name=fragment.findViewById(R.id.my_team_name);
         member_email=fragment.findViewById(R.id.member_email);
         member_phone=fragment.findViewById(R.id.member_phone);
 
@@ -161,6 +160,8 @@ public class fragA extends Fragment {
                     if(check.equals("ok")){
                         Intent intent = new Intent(getContext(),Login.class);
                         startActivity(intent);
+                    }else{
+                        Toast.makeText(getContext(), "입력하신 비밀번호가 맞지 않습니다.", Toast.LENGTH_SHORT).show();
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();

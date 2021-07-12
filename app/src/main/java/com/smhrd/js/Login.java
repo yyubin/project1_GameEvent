@@ -64,6 +64,8 @@ public class Login extends AppCompatActivity {
         btn_join_go.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), join.class);
+                startActivity(intent);
 
             }
         });
@@ -102,7 +104,7 @@ public class Login extends AppCompatActivity {
                     JSONObject jsonObject = new JSONObject(response);
                     String value = jsonObject.getString("check");
 
-                    Log.v("resultValue", value);
+                    Log.v("resultValue2", value);
                     if (value.equals("t")) {
                         String id = jsonObject.getString("member_id");
                         String pw = jsonObject.getString("member_pw");
@@ -110,11 +112,12 @@ public class Login extends AppCompatActivity {
                         String lol_name = jsonObject.getString("member_lol_name");
                         String phone = jsonObject.getString("member_phone");
                         String email = jsonObject.getString("member_email");
-                        MemberDTO dto = new MemberDTO(id, pw, name, phone, lol_name, email);
+                        String team_name = jsonObject.getString("team_name");
+
+                        MemberDTO dto = new MemberDTO(id, pw, name, phone, lol_name, email, team_name);
                         Gson gson = new Gson();
                         String member = gson.toJson(dto);
                         PreferenceManager.setString(getApplicationContext(),"login", member);
-                        Log.v("sss",member);
                         Toast.makeText(getApplicationContext(), "로그인에 성공했습니다.", Toast.LENGTH_SHORT).show();
 
 
