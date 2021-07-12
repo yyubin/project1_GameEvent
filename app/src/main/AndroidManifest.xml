@@ -13,12 +13,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.JS"
         android:usesCleartextTraffic="true">
-        <activity android:name=".JoinSuc"></activity>
+        <activity android:name=".boradsuc"></activity>
+        <activity android:name=".JoinSuc" />
         <activity android:name=".ranking" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".join">
-
-        </activity>
+        <activity android:name=".join"></activity>
         <activity android:name=".Login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
