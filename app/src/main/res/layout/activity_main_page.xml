@@ -25,7 +25,7 @@
                 app:srcCompat="@drawable/logo_black" />
 
             <TextView
-                android:id="@+id/textView23"
+                android:id="@+id/tv_vv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
@@ -53,7 +53,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/textView24"
+                    android:id="@+id/tv_mm"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
@@ -66,11 +66,12 @@
             </LinearLayout>
 
             <ImageView
-                android:id="@+id/imageView12"
+                android:id="@+id/arena_img"
                 android:layout_width="360dp"
                 android:layout_height="200dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="10dp"
+                android:onClick="showDont"
                 app:srcCompat="@drawable/arena1"
                 tools:layout_editor_absoluteX="4dp"
                 tools:layout_editor_absoluteY="124dp" />
@@ -94,7 +95,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/textView24"
+                    android:id="@+id/tv_mm"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
@@ -151,7 +152,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/textView24"
+                    android:id="@+id/tv_mm"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
@@ -250,7 +251,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/textView24"
+                    android:id="@+id/tv_mm"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
@@ -415,7 +416,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/textView24"
+                    android:id="@+id/tv_mm"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
@@ -515,7 +516,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/textView24"
+                    android:id="@+id/tv_mm"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"

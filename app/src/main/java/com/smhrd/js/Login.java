@@ -1,6 +1,5 @@
 package com.smhrd.js;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -25,8 +24,6 @@ import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
-
-import android.content.SharedPreferences;
 
 public class Login extends AppCompatActivity {
     private EditText edt_login_id, edt_login_pw;

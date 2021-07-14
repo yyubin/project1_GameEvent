@@ -12,7 +12,6 @@
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_gravity="center"
-        android:layout_marginTop="20dp"
         app:srcCompat="@drawable/logo_black" />
 
     <TextView
@@ -28,6 +27,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="58dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:orientation="horizontal">
 
         <TextView
@@ -40,7 +41,8 @@
             android:layout_weight="2"
             android:text="대회 이름"
             android:textColor="#000000"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/tv_battle_date"
@@ -50,16 +52,17 @@
             android:layout_marginEnd="30dp"
             android:layout_marginRight="30dp"
             android:layout_weight="1"
+            android:background="@drawable/border2"
             android:gravity="center_horizontal"
             android:text="2021-07-06"
             android:textColor="#000000"
-            android:background="@drawable/border2"
             android:textStyle="bold" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="44dp"
+        android:layout_marginTop="10dp"
         android:orientation="horizontal">
 
         <TextView
@@ -71,7 +74,8 @@
             android:layout_weight="0.3"
             android:text="TEAM NAME"
             android:textColor="#000000"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/textView14"
@@ -98,6 +102,7 @@
 
         <TextView
             android:id="@+id/textView16"
+            android:layout_width="5dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_weight="1"
@@ -271,12 +276,22 @@
 
     <TextView
         android:id="@+id/textView29"
-        android:layout_width="338dp"
+        android:layout_width="wrap_content"
         android:layout_height="23dp"
-        android:layout_margin="30dp"
-        android:text="보다 자세한 규정은    에서 확인해 주세요"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
+        android:text="보다 자세한 규정은 하단 버튼에서 확인해 주세요."
         android:textColor="#FF0000"
         android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btn_regulation_go"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:backgroundTint="#000000"
+        android:text="정보 확인하기" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -290,6 +305,19 @@
             app:backgroundTint="#000000"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.301"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btn_battle_submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SUBMIT"
+            app:backgroundTint="#000000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.72"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

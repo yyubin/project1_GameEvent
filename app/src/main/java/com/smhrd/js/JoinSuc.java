@@ -1,11 +1,11 @@
 package com.smhrd.js;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class JoinSuc extends AppCompatActivity {
     private Button btn_join_success_login_go;

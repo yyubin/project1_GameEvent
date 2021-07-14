@@ -1,13 +1,10 @@
 package com.smhrd.js;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-
 import android.os.Bundle;
 import android.view.MenuItem;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -40,11 +37,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(MenuItem item) {
                 int selectItem = item.getItemId();
-                if (selectItem==R.id.page1){
+                if (selectItem== R.id.page1){
                     getSupportFragmentManager().beginTransaction().replace(R.id.frag, fragmentA).commit();
-                }else if (selectItem==R.id.page2){
+                }else if (selectItem== R.id.page2){
                     getSupportFragmentManager().beginTransaction().replace(R.id.frag, fragmentB).commit();
-                }else if (selectItem==R.id.page3){
+                }else if (selectItem== R.id.page3){
                     getSupportFragmentManager().beginTransaction().replace(R.id.frag, fragmentC).commit();
                 }
                 return false;
