@@ -23,7 +23,7 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:id="@+id/imageView8"
+                    android:id="@+id/img_rank_rogo"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:layout_marginLeft="20dp"
@@ -31,7 +31,7 @@
                     app:srcCompat="@drawable/logo_black" />
 
                 <TextView
-                    android:id="@+id/textView21"
+                    android:id="@+id/tv_rank_team_name"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="20dp"
@@ -54,7 +54,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="25dp"
+                    android:layout_marginTop="15dp"
                     android:layout_weight="1"
                     app:srcCompat="@drawable/user1" />
 
@@ -62,7 +62,7 @@
                     android:id="@+id/img_mypage_group"
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="10dp"
                     android:layout_marginRight="10dp"
                     android:layout_weight="1"
                     app:srcCompat="@drawable/group" />
@@ -129,7 +129,7 @@
             <FrameLayout
                 android:id="@+id/child_fragment"
                 android:layout_width="match_parent"
-                android:layout_height="544dp">
+                android:layout_height="wrap_content">
 
             </FrameLayout>
 

@@ -25,7 +25,7 @@ public class Survival extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_survival);
 
-        tv_team = findViewById(R.id.tv_team);
+        tv_team = findViewById(R.id.tv_line);
 
         for(int i = 0; i < arr.length; i++){
             arr1[i]=findViewById(arr[i]);
@@ -49,6 +49,7 @@ public class Survival extends AppCompatActivity {
         btn_a.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
 
             }
         });

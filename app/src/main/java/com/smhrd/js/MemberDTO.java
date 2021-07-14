@@ -2,13 +2,42 @@ package com.smhrd.js;
 
 public class MemberDTO {
 
-        private String id;
-        private String pw;
-        private String name;
-        private String tel;
-        private String lol_name;
-        private String email;
-        private String team_name;
+    private String id;
+    private String pw;
+    private String name;
+    private String tel;
+    private String lol_name;
+    private String email;
+    private String team_name;
+    private String member_code;
+
+    public MemberDTO(String id, String pw, String name, String tel, String lol_name, String email) {
+        this.id = id;
+        this.pw = pw;
+        this.name = name;
+        this.tel = tel;
+        this.lol_name = lol_name;
+        this.email = email;
+    }
+
+    public MemberDTO(String id, String pw, String name, String tel, String lol_name, String email, String team_name, String member_code) {
+        this.id = id;
+        this.pw = pw;
+        this.name = name;
+        this.tel = tel;
+        this.lol_name = lol_name;
+        this.email = email;
+        this.team_name = team_name;
+        this.member_code = member_code;
+    }
+
+    public String getMember_code() {
+        return member_code;
+    }
+
+    public void setMember_code(String member_code) {
+        this.member_code = member_code;
+    }
 
     public MemberDTO(String id, String pw, String name, String tel, String lol_name, String email, String team_name) {
         this.id = id;
@@ -20,12 +49,11 @@ public class MemberDTO {
         this.team_name = team_name;
     }
 
-    public String getTeam_name() {
-        return team_name;
-    }
-
-    public void setTeam_name(String team_name) {
-        this.team_name = team_name;
+    public MemberDTO(String name, String tel, String lol_name, String email) {
+        this.name = name;
+        this.tel = tel;
+        this.lol_name = lol_name;
+        this.email = email;
     }
 
     public String getId() {
@@ -74,5 +102,13 @@ public class MemberDTO {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getTeam_name() {
+        return team_name;
+    }
+
+    public void setTeam_name(String team_name) {
+        this.team_name = team_name;
     }
 }

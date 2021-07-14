@@ -51,16 +51,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-
-
-
-
-
     }
-
-
-
 
     public void setBundle(Bundle bundle){
         this.bundle = bundle;

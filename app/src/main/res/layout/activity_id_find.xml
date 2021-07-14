@@ -21,7 +21,7 @@
             app:srcCompat="@drawable/logo_white" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/tv_chat_id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -42,7 +42,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/tv_chat_chat"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"

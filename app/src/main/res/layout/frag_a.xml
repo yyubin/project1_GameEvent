@@ -21,24 +21,6 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/textView47"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="30dp"
-                    android:text="내정보"
-                    android:textColor="#000000"
-                    android:textSize="18sp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -209,7 +191,6 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="15dp"
                 android:gravity="center"
                 android:orientation="vertical">
 
@@ -217,7 +198,6 @@
                     android:id="@+id/btn_mypage_delete"
                     android:layout_width="300dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="50dp"
                     android:background="#000000"
                     android:backgroundTint="#000000"
                     android:text="회원탈퇴"

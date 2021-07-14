@@ -1,11 +1,13 @@
 package com.smhrd.js;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -13,13 +15,14 @@ import androidx.fragment.app.Fragment;
 
 public class FragmentA extends Fragment {
 
-    private ImageView img_mypage_me,img_mypage_group;
+    private ImageView img_mypage_me, img_mypage_group;
+
 
     private int user = R.drawable.user;
     private int user1 = R.drawable.user1;
     private int group = R.drawable.group;
     private int group1 = R.drawable.group2;
-    private View view_mypage_me,view_mypage_group;
+    private View view_mypage_me, view_mypage_group;
 
 
     @Override
@@ -32,6 +35,8 @@ public class FragmentA extends Fragment {
         img_mypage_me=fragment.findViewById(R.id.img_mypage_me);
         view_mypage_me=fragment.findViewById(R.id.view_mypage_me);
         view_mypage_group=fragment.findViewById(R.id.view_mypage_group);
+
+
 
         img_mypage_group.setOnClickListener(new View.OnClickListener() {
             @Override
