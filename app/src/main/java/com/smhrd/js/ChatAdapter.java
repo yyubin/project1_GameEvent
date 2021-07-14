@@ -11,6 +11,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.zip.Inflater;
 
 public class ChatAdapter extends BaseAdapter {
 
@@ -36,7 +37,7 @@ public class ChatAdapter extends BaseAdapter {
         Context context = parent.getContext(); //xml불러오기
         ChatDTO dto = list.get(position);
 
-       String member = PreferenceManager.getString(parent.getContext(), "login");
+        String member = PreferenceManager.getString(parent.getContext(), "login");
         try {
             JSONObject jsonObject = new JSONObject(member);
             String myId = jsonObject.getString("lol_name");

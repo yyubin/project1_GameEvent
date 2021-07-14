@@ -7,6 +7,9 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 
 public class RankAdapter extends BaseAdapter {
@@ -34,14 +37,14 @@ public class RankAdapter extends BaseAdapter {
         RankDTO dto = list.get(position);
 
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            if (convertView == null) { //xml가져온게 비어있으면
+        if (convertView == null) { //xml가져온게 비어있으면
 
-                if(dto.getRank()<=3){
-                    convertView = inflater.inflate(R.layout.rank1, parent, false);
-                }else {
-                    convertView = inflater.inflate(R.layout.rank2, parent, false);
-                }
+            if(dto.getRank()<=3){
+                convertView = inflater.inflate(R.layout.rank1, parent, false);
+            }else {
+                convertView = inflater.inflate(R.layout.rank2, parent, false);
             }
+        }
 
         TextView tv_rank_rank = convertView.findViewById(R.id.tv_rank_rank);
         TextView tv_rank_name = convertView.findViewById(R.id.tv_rank_name);

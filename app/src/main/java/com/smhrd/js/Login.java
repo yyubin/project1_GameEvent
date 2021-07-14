@@ -1,5 +1,6 @@
 package com.smhrd.js;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -24,6 +25,8 @@ import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import android.content.SharedPreferences;
 
 public class Login extends AppCompatActivity {
     private EditText edt_login_id, edt_login_pw;
@@ -109,7 +112,8 @@ public class Login extends AppCompatActivity {
                         String email = jsonObject.getString("member_email");
                         String team_name = jsonObject.getString("team_name");
                         String member_code = jsonObject.getString("member_code");
-                        MemberDTO dto = new MemberDTO(id, pw, name, phone, lol_name, email,team_name,member_code);
+
+                        MemberDTO dto = new MemberDTO(id,pw,name,phone,lol_name,email, team_name,member_code);
                         Gson gson = new Gson();
                         String member = gson.toJson(dto);
                         PreferenceManager.setString(getApplicationContext(),"login", member);
