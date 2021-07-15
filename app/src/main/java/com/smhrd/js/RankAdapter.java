@@ -1,6 +1,7 @@
 package com.smhrd.js;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,14 +38,14 @@ public class RankAdapter extends BaseAdapter {
         RankDTO dto = list.get(position);
 
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        if (convertView == null) { //xml가져온게 비어있으면
 
             if(dto.getRank()<=3){
+
                 convertView = inflater.inflate(R.layout.rank1, parent, false);
             }else {
                 convertView = inflater.inflate(R.layout.rank2, parent, false);
             }
-        }
+
 
         TextView tv_rank_rank = convertView.findViewById(R.id.tv_rank_rank);
         TextView tv_rank_name = convertView.findViewById(R.id.tv_rank_name);

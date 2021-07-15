@@ -25,12 +25,13 @@
         android:textSize="16sp" />
 
     <LinearLayout
+        android:id="@+id/tv"
         android:layout_width="match_parent"
         android:layout_height="41dp"
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/tv_chat_id"
+            android:id="@+id/tv_chat_"
             android:layout_width="11dp"
             android:layout_height="match_parent"
             android:layout_marginTop="5dp"
@@ -41,7 +42,7 @@
             android:textSize="24sp" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/tv_board_list"
             android:layout_width="217dp"
             android:layout_height="match_parent"
             android:layout_marginTop="5dp"
@@ -52,7 +53,7 @@
             android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/textVi7ew5"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginTop="5dp"
@@ -75,14 +76,14 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/textView8"
+                android:id="@+id/te7xtView8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="0"
                 android:text="TextView" />
 
             <TextView
-                android:id="@+id/textView9"
+                android:id="@+id/textVi1ew9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="15"
@@ -90,7 +91,7 @@
                 android:text="TextView" />
 
             <TextView
-                android:id="@+id/textView10"
+                android:id="@+id/textV1iew10"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="0"
@@ -103,67 +104,15 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/textView15"
+                android:id="@+id/textV3iew15"
                 android:layout_width="595dp"
                 android:layout_height="9dp"
                 android:layout_weight="1" />
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="113dp"
-            android:orientation="horizontal">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="0.8"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:text="제목제목제목"
-                    android:textColor="#000000"
-                    android:textSize="20sp" />
-
-                <TextView
-                    android:id="@+id/textView17"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="박유빈" />
-
-                <TextView
-                    android:id="@+id/textView18"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="07/15 16:59"
-                    android:textSize="12sp" />
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="83dp"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/textView20"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="15dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="15dp"
-                android:layout_marginRight="15dp"
-                android:layout_marginBottom="5dp"
-                android:text="내용내용내용내용" />
-        </LinearLayout>
-
         <ListView
+            android:id="@+id/board_list"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </LinearLayout>
@@ -365,6 +314,7 @@
         </LinearLayout>
 
         <ListView
+            android:id="@+id/boardlist"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </LinearLayout>

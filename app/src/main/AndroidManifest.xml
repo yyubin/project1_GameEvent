@@ -17,24 +17,25 @@
         <activity android:name=".QuestionAnswer" />
         <activity android:name=".boradsuc" />
         <activity android:name=".JoinSuc" />
-        <activity android:name=".ranking" />
+        <activity android:name=".Login" />
         <activity android:name=".MainActivity" />
         <activity android:name=".MainPage" />
         <activity android:name=".join" />
-        <activity android:name=".Login">
+        <activity android:name=".imgChoice" />
+        <activity android:name=".free_board">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".free_board" />
+        <activity android:name=".Survival" />
         <activity android:name=".id_find" />
         <activity android:name=".pw_find" />
-        <activity android:name=".CreateTeam" />
+        <activity android:name=".ranking" />
         <activity android:name=".battle_attend" />
         <activity android:name=".chatting" />
-        <activity android:name=".Survival" >
+        <activity android:name=".CreateTeam" >
 
         </activity>
         <activity android:name=".Table" />

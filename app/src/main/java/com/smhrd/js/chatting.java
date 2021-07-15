@@ -68,6 +68,8 @@ public class chatting extends AppCompatActivity {
             e.printStackTrace();
         }
 
+        sendRequest();
+
         btn_chat_submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

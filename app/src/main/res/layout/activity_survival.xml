@@ -2,10 +2,11 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/lay"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Survival" >
+    tools:context=".Survival">
 
     <ImageView
         android:id="@+id/imageView4"
@@ -66,7 +67,7 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/tv_sv_1"
+            android:id="@+id/tv_sv_32_1"
             android:layout_width="80dp"
             android:layout_height="40dp"
             android:layout_margin="10dp"
@@ -78,12 +79,12 @@
             android:paddingBottom="5dp"
             android:shadowDx="1"
             android:textColor="#000000"
-            android:textSize="16sp"
+            android:textSize="10sp"
             tools:layout_editor_absoluteX="134dp"
             tools:layout_editor_absoluteY="250dp" />
 
         <TextView
-            android:id="@+id/tv_sv_2"
+            android:id="@+id/tv_sv_32_2"
             android:layout_width="80dp"
             android:layout_height="40dp"
             android:layout_margin="10dp"
@@ -95,12 +96,12 @@
             android:paddingBottom="5dp"
             android:shadowDx="1"
             android:textColor="#000000"
-            android:textSize="16sp"
+            android:textSize="10sp"
             tools:layout_editor_absoluteX="134dp"
             tools:layout_editor_absoluteY="250dp" />
 
         <TextView
-            android:id="@+id/tv_sv_3"
+            android:id="@+id/tv_sv_32_3"
             android:layout_width="80dp"
             android:layout_height="40dp"
             android:layout_margin="10dp"
@@ -112,12 +113,12 @@
             android:paddingBottom="5dp"
             android:shadowDx="1"
             android:textColor="#000000"
-            android:textSize="16sp"
+            android:textSize="10sp"
             tools:layout_editor_absoluteX="134dp"
             tools:layout_editor_absoluteY="250dp" />
 
         <TextView
-            android:id="@+id/tv_sv_4"
+            android:id="@+id/tv_sv_32_4"
             android:layout_width="80dp"
             android:layout_height="40dp"
             android:layout_margin="10dp"
@@ -129,7 +130,7 @@
             android:paddingBottom="5dp"
             android:shadowDx="1"
             android:textColor="#000000"
-            android:textSize="16sp"
+            android:textSize="10sp"
             tools:layout_editor_absoluteX="134dp"
             tools:layout_editor_absoluteY="250dp" />
     </LinearLayout>
@@ -187,12 +188,13 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/lay_8"
         android:layout_width="match_parent"
-        android:layout_height="83dp"
+        android:layout_height="70dp"
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/tv_sv_5"
+            android:id="@+id/tv_sv_16_1"
             android:layout_width="80dp"
             android:layout_height="40dp"
             android:layout_marginStart="60dp"
@@ -209,12 +211,12 @@
             android:paddingBottom="5dp"
             android:shadowDx="1"
             android:textColor="#000000"
-            android:textSize="16sp"
+            android:textSize="10sp"
             tools:layout_editor_absoluteX="134dp"
             tools:layout_editor_absoluteY="250dp" />
 
         <TextView
-            android:id="@+id/tv_sv_6"
+            android:id="@+id/tv_sv_16_2"
             android:layout_width="80dp"
             android:layout_height="40dp"
             android:layout_marginStart="60dp"
@@ -231,63 +233,63 @@
             android:paddingBottom="5dp"
             android:shadowDx="1"
             android:textColor="#000000"
-            android:textSize="16sp"
+            android:textSize="10sp"
             tools:layout_editor_absoluteX="134dp"
             tools:layout_editor_absoluteY="250dp" />
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/tv_sv_7"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginStart="160dp"
-        android:layout_marginLeft="160dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="160dp"
-        android:layout_marginRight="160dp"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/editbox2"
-        android:paddingLeft="30dp"
-        android:paddingTop="5dp"
-        android:paddingRight="30dp"
-        android:paddingBottom="5dp"
-        android:shadowDx="1"
-        android:textColor="#000000"
-        android:textSize="16sp"
-        tools:layout_editor_absoluteX="134dp"
-        tools:layout_editor_absoluteY="250dp" />
-
     <LinearLayout
+        android:id="@+id/tv_sv_8_a1"
         android:layout_width="match_parent"
-        android:layout_height="69dp"
-        android:layout_marginTop="20dp"
-        android:orientation="horizontal">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center_horizontal">
 
         <TextView
-            android:id="@+id/tv_sv_8"
-            android:layout_width="80dp"
+            android:id="@+id/tv_sv_8_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="20dp"
+            android:text="팀1"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tv_sv_4_1"
+            android:layout_width="100dp"
             android:layout_height="40dp"
-            android:layout_marginStart="60dp"
-            android:layout_marginLeft="60dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="60dp"
-            android:layout_marginRight="60dp"
-            android:layout_marginBottom="10dp"
-            android:layout_weight="1"
             android:background="@drawable/editbox2"
             android:paddingLeft="30dp"
             android:paddingTop="5dp"
             android:paddingRight="30dp"
             android:paddingBottom="5dp"
             android:shadowDx="1"
-            android:textColor="#000000"
-            android:textSize="16sp"
+            android:textColor="#0B0A0A"
+            android:textSize="10sp"
             tools:layout_editor_absoluteX="134dp"
             tools:layout_editor_absoluteY="250dp" />
 
         <TextView
-            android:id="@+id/tv_sv_9"
+            android:id="@+id/tv_sv_8_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="20dp"
+            android:text="팀2"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_sv_16_3"
             android:layout_width="80dp"
             android:layout_height="40dp"
             android:layout_marginStart="60dp"
@@ -304,7 +306,29 @@
             android:paddingBottom="5dp"
             android:shadowDx="1"
             android:textColor="#000000"
-            android:textSize="16sp"
+            android:textSize="10sp"
+            tools:layout_editor_absoluteX="134dp"
+            tools:layout_editor_absoluteY="250dp" />
+
+        <TextView
+            android:id="@+id/tv_sv_16_4"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="60dp"
+            android:layout_marginRight="60dp"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/editbox2"
+            android:paddingLeft="30dp"
+            android:paddingTop="5dp"
+            android:paddingRight="30dp"
+            android:paddingBottom="5dp"
+            android:shadowDx="1"
+            android:textColor="#000000"
+            android:textSize="10sp"
             tools:layout_editor_absoluteX="134dp"
             tools:layout_editor_absoluteY="250dp" />
     </LinearLayout>
@@ -367,7 +391,7 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/tv_sv_10"
+            android:id="@+id/tv_sv_32_5"
             android:layout_width="80dp"
             android:layout_height="40dp"
             android:layout_margin="10dp"
@@ -379,12 +403,12 @@
             android:paddingBottom="5dp"
             android:shadowDx="1"
             android:textColor="#000000"
-            android:textSize="16sp"
+            android:textSize="10sp"
             tools:layout_editor_absoluteX="134dp"
             tools:layout_editor_absoluteY="250dp" />
 
         <TextView
-            android:id="@+id/tv_sv_11"
+            android:id="@+id/tv_sv_32_6"
             android:layout_width="80dp"
             android:layout_height="40dp"
             android:layout_margin="10dp"
@@ -396,12 +420,12 @@
             android:paddingBottom="5dp"
             android:shadowDx="1"
             android:textColor="#000000"
-            android:textSize="16sp"
+            android:textSize="10sp"
             tools:layout_editor_absoluteX="134dp"
             tools:layout_editor_absoluteY="250dp" />
 
         <TextView
-            android:id="@+id/tv_sv_12"
+            android:id="@+id/tv_sv_32_7"
             android:layout_width="80dp"
             android:layout_height="40dp"
             android:layout_margin="10dp"
@@ -413,12 +437,12 @@
             android:paddingBottom="5dp"
             android:shadowDx="1"
             android:textColor="#000000"
-            android:textSize="16sp"
+            android:textSize="10sp"
             tools:layout_editor_absoluteX="134dp"
             tools:layout_editor_absoluteY="250dp" />
 
         <TextView
-            android:id="@+id/tv_sv_13"
+            android:id="@+id/tv_sv_32_8"
             android:layout_width="80dp"
             android:layout_height="40dp"
             android:layout_margin="10dp"
@@ -430,7 +454,7 @@
             android:paddingBottom="5dp"
             android:shadowDx="1"
             android:textColor="#000000"
-            android:textSize="16sp"
+            android:textSize="10sp"
             tools:layout_editor_absoluteX="134dp"
             tools:layout_editor_absoluteY="250dp" />
 

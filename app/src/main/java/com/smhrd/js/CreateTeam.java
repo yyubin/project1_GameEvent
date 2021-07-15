@@ -1,5 +1,6 @@
 package com.smhrd.js;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.ContentResolver;
 import android.content.Context;
@@ -58,6 +59,8 @@ public class CreateTeam extends AppCompatActivity {
 
     private ImageView img;
     private String img_path;
+    private int ad;
+    String choice;
 
     private RequestQueue queue;
     private StringRequest stringRequest;
@@ -82,11 +85,18 @@ public class CreateTeam extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent();
-                intent.setType("image/*");
-                intent.setAction(Intent.ACTION_GET_CONTENT);
+//                Intent intent = new Intent();
+//                intent.setType("image/*");
+//                intent.setAction(Intent.ACTION_GET_CONTENT);
+//
+//                startActivityForResult(intent, 1);
+//                Intent intent = new Intent(getApplicationContext(),.class);
+//                startActivity(intent);
 
-                startActivityForResult(intent, 1);
+                Intent intent = new Intent(getApplicationContext(),imgChoice.class);
+                startActivityForResult(intent,1);
+
+
             }
         });
 
@@ -99,31 +109,49 @@ public class CreateTeam extends AppCompatActivity {
         });
 
 
-    }
 
-    // 선택된 이미지를 image View에 세팅한다.
+    }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+
         if (requestCode == 1) {
-            if (resultCode == RESULT_OK) {
-
-                Uri uri = null;
-                if (data != null) {
-                    uri = data.getData();
-                }
-                if (uri != null) {
-                    img.setImageURI(uri);
-                    // 절대 경로 얻을 수 있는 메소드 사용
-                    img_path = createCopyAndReturnRealPath(CreateTeam.this.getApplicationContext(), uri);
-                    // 절대경로를 미리 확인해 볼 수  있는 Dialog
-                    new AlertDialog.Builder(this).setMessage(uri.toString()+"\n"+img_path).create().show();
-                    Log.v("path",uri.toString()+"\n"+img_path);
-
-                }
+            if (resultCode != Activity.RESULT_OK) {
+                return;
             }
+            choice = data.getStringExtra("img");
+            String pac = this.getPackageName();
+            Log.v("aaaa",choice+"");
+            String img1 = "@drawable/logo"+choice;
+
+           ad = getResources ().getIdentifier(img1,"drawable",pac);
+            img.setImageResource(ad);
         }
     }
+
+    // 선택된 이미지를 image View에 세팅한다.
+//    @Override
+//    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+//        super.onActivityResult(requestCode, resultCode, data);
+//        if (requestCode == 1) {
+//            if (resultCode == RESULT_OK) {
+//
+//                Uri uri = null;
+//                if (data != null) {
+//                    uri = data.getData();
+//                }
+//                if (uri != null) {
+//                    img.setImageURI(uri);
+//                    // 절대 경로 얻을 수 있는 메소드 사용
+//                    img_path = createCopyAndReturnRealPath(CreateTeam.this.getApplicationContext(), uri);
+//                    // 절대경로를 미리 확인해 볼 수  있는 Dialog
+//                    new AlertDialog.Builder(this).setMessage(uri.toString()+"\n"+img_path).create().show();
+//                    Log.v("path",uri.toString()+"\n"+img_path);
+//
+//                }
+//            }
+//        }
+//    }
 
 
     public void sendRequest() {
@@ -173,7 +201,7 @@ public class CreateTeam extends AppCompatActivity {
 
                 parmas.put("team_name",edt_create_team_name.getText().toString());
                 parmas.put("team_introduce",edt_create_team_text.getText().toString());
-                parmas.put("team_img_logo",img_path);
+                parmas.put("team_img_logo",choice);
 
                 return parmas;
 
@@ -186,45 +214,45 @@ public class CreateTeam extends AppCompatActivity {
     }
 
 
-    // 절대경로 파악할 때 사용된 메소드
-    @Nullable
-    public String createCopyAndReturnRealPath(@NonNull Context context, @NonNull Uri uri) {
-        final ContentResolver contentResolver = context.getContentResolver();
-
-        if (contentResolver == null)
-            return null;
-
-
-        // 파일 경로를 만듬
-        String filePath = context.getApplicationInfo().dataDir + File.separator
-                + System.currentTimeMillis();
-
-
-        File file = new File(filePath);
-        try {
-            // 매개변수로 받은 uri 를 통해  이미지에 필요한 데이터를 불러 들인다.
-
-            InputStream inputStream = contentResolver.openInputStream(uri);
-            if (inputStream == null)
-                return null;
-            // 이미지 데이터를 다시 내보내면서 file 객체에  만들었던 경로를 이용한다.
-
-            OutputStream outputStream = new FileOutputStream(file);
-            byte[] buf = new byte[1024];
-            int len;
-            while ((len = inputStream.read(buf)) > 0)
-                outputStream.write(buf, 0, len);
-            outputStream.close();
-
-            inputStream.close();
-
-
-        } catch (IOException ignore) {
-            return null;
-        }
-
-        return file.getAbsolutePath();
-    }
+//    // 절대경로 파악할 때 사용된 메소드
+//    @Nullable
+//    public String createCopyAndReturnRealPath(@NonNull Context context, @NonNull Uri uri) {
+//        final ContentResolver contentResolver = context.getContentResolver();
+//
+//        if (contentResolver == null)
+//            return null;
+//
+//
+//        // 파일 경로를 만듬
+//        String filePath = context.getApplicationInfo().dataDir + File.separator
+//                + System.currentTimeMillis();
+//
+//
+//        File file = new File(filePath);
+//        try {
+//            // 매개변수로 받은 uri 를 통해  이미지에 필요한 데이터를 불러 들인다.
+//
+//            InputStream inputStream = contentResolver.openInputStream(uri);
+//            if (inputStream == null)
+//                return null;
+//            // 이미지 데이터를 다시 내보내면서 file 객체에  만들었던 경로를 이용한다.
+//
+//            OutputStream outputStream = new FileOutputStream(file);
+//            byte[] buf = new byte[1024];
+//            int len;
+//            while ((len = inputStream.read(buf)) > 0)
+//                outputStream.write(buf, 0, len);
+//            outputStream.close();
+//
+//            inputStream.close();
+//
+//
+//        } catch (IOException ignore) {
+//            return null;
+//        }
+//
+//        return file.getAbsolutePath();
+//    }
 
 
 

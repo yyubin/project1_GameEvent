@@ -50,14 +50,14 @@ public class ranking extends AppCompatActivity {
     private RankAdapter adapter;
     private ArrayList<RankDTO> list = new ArrayList<RankDTO>();
 
-    private int a;
-    String myteam;
+    private int a,ad;
+    String myteam, pac;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ranking);
-
+        pac = this.getPackageName();
         img_rank_team_rogo=findViewById(R.id.img_rank_rogo);
         tv_rank_lol_name=findViewById(R.id.tv_rank_lol_name);
         tv_rank_team_name=findViewById(R.id.tv_rank_team_name);
@@ -123,6 +123,9 @@ public class ranking extends AppCompatActivity {
                     JSONArray jsonArray = jsonObject.getJSONArray("team_name");
                     JSONArray jsonArray1 = jsonObject.getJSONArray("team_score");
                     JSONArray jsonArray2 = jsonObject.getJSONArray("team_img_logo");
+
+
+
                     int rank;
                     for (int i = 0; i < jsonArray.length(); i++) {
                         rank = (i+1);
@@ -130,8 +133,9 @@ public class ranking extends AppCompatActivity {
                         String team_score = jsonArray1.getString(i);
                         tv_rank_team_rank.setText(rank+"");
 
-
+                        adapter.notifyDataSetChanged();
                         adapter.addItem(rank,team_name,team_score);
+                        Log.v("1위",rank+"");
                         ranklist.setAdapter(adapter);
                         ranklist.setSelection(adapter.getCount() - 1);
 
@@ -140,25 +144,18 @@ public class ranking extends AppCompatActivity {
 
                         if(myteam.equals(jsonArray.getString(i)+"")) {
                             a=i;
+                            String img1 = "@drawable/logo"+jsonArray2.getString(i);
+                            ad = getResources ().getIdentifier(img1,"drawable",pac);
+                            img_rank_team_rogo.setImageResource(ad);
                             Log.v("num",a+"");
-                            try {
-                                Log.v("Uri", jsonArray2.getString(a));
-                                File files = new File(jsonArray2.getString(a));
-                                if (files.exists() == true) {
-                                    Uri uri1 = Uri.parse(jsonArray2.getString(a));
-                                    img_rank_team_rogo.setImageURI(uri1);
 
-                                }
-                            } catch (Exception e) {
-                                e.printStackTrace();
-                            }
                             tv_rank_team_score.setText(jsonArray1.getString(a));
 
                         }
 
                     }
 
-                    adapter.notifyDataSetChanged();
+
 
 
                 } catch (JSONException e) {
