@@ -165,7 +165,7 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="20dp"
-                    android:backgroundTint="#F41010"
+                    android:backgroundTint="#1C1B1B"
                     android:text="확인"
                     android:textSize="18sp" />
             </LinearLayout>

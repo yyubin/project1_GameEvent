@@ -89,7 +89,7 @@
                     android:layout_marginLeft="30dp"
                     android:layout_marginTop="30dp"
                     android:layout_weight="0"
-                    android:text="CREATE CLAN"
+                    android:text="CREATE TEAM"
                     android:textColor="#000000"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -102,7 +102,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="30dp"
                     android:layout_weight="1"
-                    android:text="클랜 생성"
+                    android:text="팀 생성"
                     android:textColor="#000000" />
 
             </LinearLayout>
@@ -128,7 +128,7 @@
                     android:layout_marginTop="20dp"
                     android:layout_marginEnd="50dp"
                     android:layout_marginRight="50dp"
-                    android:text="클랜 생성하기"
+                    android:text="팀생성하기"
                     android:textStyle="bold"
                     app:backgroundTint="#FF0000" />
             </FrameLayout>

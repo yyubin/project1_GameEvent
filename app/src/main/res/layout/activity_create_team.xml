@@ -130,7 +130,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:layout_marginRight="20dp"
             android:orientation="horizontal">
 
             <TextView
@@ -146,20 +145,18 @@
 
             <Button
                 android:id="@+id/btn_img_up"
-                android:layout_width="wrap_content"
+                android:layout_width="100dp"
                 android:layout_height="50dp"
-                android:layout_marginStart="20dp"
                 android:layout_marginLeft="20dp"
-                android:text="팀마크 선택"
+                android:text="마크 선택"
                 android:textStyle="bold"
                 app:backgroundTint="#000000" />
 
             <Button
                 android:id="@+id/btn_chat_submit"
-                android:layout_width="wrap_content"
+                android:layout_width="100dp"
                 android:layout_height="50dp"
-                android:layout_marginStart="45dp"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="25dp"
                 android:layout_marginRight="20dp"
                 android:text="선택안함"
                 android:textStyle="bold"

@@ -108,7 +108,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="등록"
-                app:backgroundTint="#939292" />
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:backgroundTint="#1B1A1A" />
 
             <Button
                 android:id="@+id/button"
@@ -116,7 +118,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"
                 android:text="취소"
-                app:backgroundTint="#939292" />
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:backgroundTint="#1E1D1D" />
         </LinearLayout>
 
 
