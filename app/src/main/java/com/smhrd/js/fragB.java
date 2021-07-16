@@ -62,7 +62,7 @@ public class fragB extends Fragment {
     public void sendRequest() {
         queue = Volley.newRequestQueue(getContext());
 
-        String url = "http://121.147.52.82:3100/Search";
+        String url = "http://59.0.234.45:3100/Search";
         stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {

@@ -80,6 +80,7 @@
                 android:hint="제목"
                 android:inputType="textPersonName"
                 android:paddingLeft="10dp"
+                android:textColor="#000000"
                 android:textColorHint="#939292" />
 
             <EditText
@@ -93,7 +94,8 @@
                 android:gravity="start|top"
                 android:hint="내용을 입력해주세요."
                 android:inputType="textMultiLine"
-                android:padding="10dp" />
+                android:padding="10dp"
+                android:textColor="#000000" />
         </LinearLayout>
 
         <LinearLayout

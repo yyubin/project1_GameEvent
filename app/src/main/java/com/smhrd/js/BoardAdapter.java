@@ -10,8 +10,6 @@ import android.widget.BaseAdapter;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import androidx.activity.result.contract.ActivityResultContracts;
-
 import java.util.ArrayList;
 
 public class BoardAdapter extends BaseAdapter {
@@ -64,6 +62,7 @@ public class BoardAdapter extends BaseAdapter {
                     Intent intent = new Intent(parent.getContext(),boradsuc.class);
                     intent.putExtra("board_text_num",dto.getNum());
                     intent.putExtra("board_num",dto.getBoard_num());
+                    intent.putExtra("name",dto.getName());
 
                     context.startActivity(intent);
                     Log.v("aa","인텐트성공");

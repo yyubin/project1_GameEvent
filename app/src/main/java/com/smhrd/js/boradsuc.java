@@ -3,6 +3,7 @@ package com.smhrd.js;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -40,6 +41,7 @@ public class boradsuc extends AppCompatActivity {
     private ListView comment_list;
 
     private ArrayList<CommentDTO> list = new ArrayList<CommentDTO>();
+    private ArrayList<String> count = new ArrayList<String>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,9 +59,21 @@ public class boradsuc extends AppCompatActivity {
         Intent intent = getIntent();
         num=intent.getStringExtra("board_text_num");
         num2=intent.getStringExtra("board_num");
+        String name = intent.getStringExtra("name");
+        tv_free_lol_name.setText(name);
         Log.v("num",num);
 
         sendRequest();
+
+        btn_free_submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                sendRequest1();
+
+
+            }
+        });
     }
 
     public void sendRequest() {
@@ -79,11 +93,17 @@ public class boradsuc extends AppCompatActivity {
                     tv_free_text.setText(jsonArray1.getString(0));
                     JSONArray jsonArray2 = jsonObject.getJSONArray("댓글작성자");
                     JSONArray jsonArray3 = jsonObject.getJSONArray("댓글내용");
-                    for(int i=0; i<jsonArray2.length(); i++){
-                        String lol_name = jsonArray2.getString(i);
-                        String comment = jsonArray3.getString(i);
-                        adapter.addItem(lol_name,comment);
-                    }
+
+
+                        for(int i=0; i<jsonArray2.length(); i++){
+                            String lol_name = jsonArray2.getString(i);
+                            String comment = jsonArray3.getString(i);
+
+
+                            adapter.addItem(lol_name,comment,i+"");
+                        }
+
+
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -109,7 +129,66 @@ public class boradsuc extends AppCompatActivity {
                 parmas.put("board_text_num",String.valueOf(Integer.parseInt(num)));
                 parmas.put("board_num",String.valueOf(Integer.parseInt(num2)));
 
+
                 return parmas;
+
+            }
+        };
+
+        queue.add(stringRequest);
+
+
+    }
+
+    public void sendRequest1() {
+        adapter=new CommentAdapter();
+        queue = Volley.newRequestQueue(this);
+        String url = "http://121.147.52.82:3100/free_board_comment_write";
+        stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                //Server로부터 데이터를 받아온 곳
+                Log.v("idiid",response);
+
+                sendRequest();
+
+            }
+
+
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                //Server 통신시 Error 발생하면 오는 곳
+                error.printStackTrace();
+            }
+        }) {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                //Server로 데이터 보낼 시 넣어주는 곳
+                Map<String, String> parmas = new HashMap<String, String>();
+
+                parmas.put("board_text_num",String.valueOf(Integer.parseInt(num)));
+                parmas.put("board_num",String.valueOf(Integer.parseInt(num2)));
+
+                String name;
+
+                String member = PreferenceManager.getString(getApplicationContext(),"login");
+                try {
+                    JSONObject jsonObject = new JSONObject(member);
+                    name=jsonObject.getString("lol_name");
+                    parmas.put("member_lol_name",name);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                String comment = edt_free_comment.getText().toString();
+
+                parmas.put("comment_text",comment);
+                parmas.put("board_text_num",String.valueOf(Integer.parseInt(num)));
+
+                sendRequest();
+                return parmas;
+
+
 
             }
         };

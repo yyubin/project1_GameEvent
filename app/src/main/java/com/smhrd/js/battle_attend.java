@@ -101,8 +101,6 @@ public class battle_attend extends AppCompatActivity implements View.OnClickList
                         Log.v("mem",member+"");
                     }
 
-
-
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -128,7 +126,6 @@ public class battle_attend extends AppCompatActivity implements View.OnClickList
                     e.printStackTrace();
                 }
 
-
                 return parmas;
 
             }
@@ -151,7 +148,7 @@ public class battle_attend extends AppCompatActivity implements View.OnClickList
         btn_regulation_go.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), Regulation.class);
+                Intent intent = new Intent(getApplicationContext(), Regulation2.class);
                 startActivity(intent);
             }
         });

@@ -9,7 +9,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        >
 
     </LinearLayout>
 
@@ -83,6 +84,10 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/editbox"
         android:orientation="vertical">
 
         <TextView
@@ -91,6 +96,10 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="10dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/editbox"
+            android:padding="5dp"
+            android:paddingLeft="5dp"
             android:text="작성자"
             android:textColor="#000000"
             android:textSize="18sp" />
@@ -99,11 +108,13 @@
             android:id="@+id/comment_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="15dp"
             android:layout_marginTop="5dp"
-            android:layout_marginRight="10dp"
+            android:layout_marginRight="15dp"
             android:layout_marginBottom="10dp"
-            android:text="내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다."
+            android:background="@drawable/editbox"
+            android:padding="5dp"
+            android:text="내용입니다.\n내용입니다.\n내용입니다."
             android:textColor="#000000"
             android:textSize="18sp" />
 
@@ -152,6 +163,10 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/editbox"
         android:orientation="vertical">
 
         <TextView
@@ -162,7 +177,7 @@
             android:layout_marginTop="5dp"
             android:layout_marginRight="10dp"
             android:layout_marginBottom="10dp"
-            android:text="내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다."
+            android:text="답변입니다.\n답변입니다.\n답변입니다."
             android:textColor="#000000"
             android:textSize="18sp" />
     </LinearLayout>

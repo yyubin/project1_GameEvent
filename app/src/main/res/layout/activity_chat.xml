@@ -37,7 +37,7 @@
     <ListView
         android:id="@+id/chatlist"
         android:layout_width="match_parent"
-        android:layout_height="518dp">
+        android:layout_height="490dp">
 
     </ListView>
 

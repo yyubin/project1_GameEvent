@@ -7,9 +7,6 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.util.ArrayList;
 
 public class CommentAdapter extends BaseAdapter {
@@ -36,16 +33,26 @@ public class CommentAdapter extends BaseAdapter {
         Context context = parent.getContext(); //xml불러오기
         CommentDTO dto = list.get(position);
 
-
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        convertView = inflater.inflate(R.layout.comment, parent, false);
 
+            if (!dto.getComment().equals(" ")){
+
+                convertView = inflater.inflate(R.layout.comment, parent, false);
+                TextView comment_lol_name = convertView.findViewById(R.id.comment_lol_name);
+                TextView comment_text = convertView.findViewById(R.id.comment_text);
+
+                comment_lol_name.setText(dto.getLol_name());
+                comment_text.setText(dto.getComment());
+
+            }else{
+                convertView = inflater.inflate(R.layout.comment2,parent,false);
+            }
 
         return convertView;
     }
 
-    public void addItem(String lol_name, String chat){
-        CommentDTO dto = new CommentDTO(lol_name,chat);
+    public void addItem(String lol_name, String chat, String num){
+        CommentDTO dto = new CommentDTO(lol_name,chat, num);
         list.add(dto);
     }
 }
