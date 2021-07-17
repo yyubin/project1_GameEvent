@@ -43,10 +43,12 @@ public class FragmentB extends Fragment {
     public Context context_main;
 
     private TextView tv_rank_1_score, tv_rank_2_score, tv_rank_3_score, main_rank_1_name, main_rank_2_name, main_rank_3_name,
-        tv_main_free_title,tv_main_free_text;
+        tv_main_free_title,tv_main_free_text, tv_main_recruit, tv_main_recruit_text,tv_main_qa,tv_main_qa_text;
     private ranking ranking;
 
     private MainPage mainPage;
+
+    private ImageView img_main_recruit;
 
 
     private RequestQueue queue;
@@ -67,6 +69,11 @@ public class FragmentB extends Fragment {
         Button btn_QAchat_go = fragment.findViewById(R.id.btn_QAchat_go);
         Button btn_rank_go = fragment.findViewById(R.id.btn_rank_go);
 
+        tv_main_qa=fragment.findViewById(R.id.tv_main_qa);
+        tv_main_qa_text=fragment.findViewById(R.id.tv_main_qa_text);
+
+        img_main_recruit=fragment.findViewById(R.id.img_main_recurit);
+
         tv_rank_1_score=fragment.findViewById(R.id.tv_rank_1_score);
         tv_rank_2_score=fragment.findViewById(R.id.tv_rank_2_score);
         tv_rank_3_score=fragment.findViewById(R.id.tv_rank_3_score);
@@ -77,6 +84,9 @@ public class FragmentB extends Fragment {
 
         tv_main_free_text=fragment.findViewById(R.id.tv_main_free_text);
         tv_main_free_title=fragment.findViewById(R.id.tv_main_free_title);
+
+        tv_main_recruit=fragment.findViewById(R.id.tv_main_recurit);
+        tv_main_recruit_text=fragment.findViewById(R.id.tv_main_recurit_text);
 
 
         arena_img = fragment.findViewById(R.id.arena_img);
@@ -89,7 +99,8 @@ public class FragmentB extends Fragment {
         ranking=new ranking();
         sendRequest();
         sendRequest1();
-
+        sendRequest2();
+        sendRequest3();
 
         btn_rank_go.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -110,7 +121,8 @@ public class FragmentB extends Fragment {
         btn_recruiting_go.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getContext(), Recruting_chat.class);
+                Intent intent = new Intent(getContext(), free_board.class);
+                intent.putExtra("number",2+"");
                 startActivity(intent);
             }
         });
@@ -119,6 +131,7 @@ public class FragmentB extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(),free_board.class);
+                intent.putExtra("number",1+"");
                 startActivity(intent);
             }
         });
@@ -126,7 +139,8 @@ public class FragmentB extends Fragment {
         btn_QAchat_go.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getContext(), QuestionAnswer.class);
+                Intent intent = new Intent(getContext(), free_board.class);
+                intent.putExtra("number",3+"");
                 startActivity(intent);
             }
         });
@@ -268,7 +282,154 @@ public class FragmentB extends Fragment {
         queue.add(stringRequest);
     }
 
+    public void sendRequest2() { // get방식 post방식 get방식은 url공유가능
 
+        queue = Volley.newRequestQueue(getContext());
+        String url = "http://121.147.52.82:3100/recruit_board_all";
+        stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+            private ArrayList<ChatDTO> list = new ArrayList<ChatDTO>();
+
+            @Override
+            public void onResponse(String response) {
+
+                Log.v("resultValue", response);
+                try {
+                    JSONObject jsonObject = new JSONObject(response);
+                    JSONArray numArray = jsonObject.getJSONArray("board_text_num");
+                    JSONArray jsonArray = jsonObject.getJSONArray("board_title");
+                    JSONArray jsonArray1 = jsonObject.getJSONArray("member_lol_name");
+                    JSONArray jsonArray2 = jsonObject.getJSONArray("board_time");
+                    JSONArray jsonArray3 = jsonObject.getJSONArray("board_text");
+                    JSONArray jsonArray4 = jsonObject.getJSONArray("board_num");
+
+
+                    tv_main_recruit.setText(jsonArray.getString(0));
+                    tv_main_recruit_text.setText(jsonArray3.getString(0));
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                // 에러 감지하는 곳
+                //Server 통신시 Error발생 하면 오는 곳
+                error.printStackTrace();
+            }
+        }) {
+
+            @Override
+            protected Response<String> parseNetworkResponse(NetworkResponse response) {
+
+                try {
+                    String utf8String = new String(response.data, "UTF-8");
+                    return Response.success(utf8String, HttpHeaderParser.parseCacheHeaders(response)); //인코딩하는 코드
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
+
+                return super.parseNetworkResponse(response);
+
+
+            }
+
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<String, String>();
+
+
+
+
+                return params;
+
+            }
+        };
+
+
+        queue.add(stringRequest);
+
+
+    }
+
+    public void sendRequest3() { // get방식 post방식 get방식은 url공유가능
+
+        queue = Volley.newRequestQueue(getContext());
+        String url = "http://121.147.52.82:3100/qa_board_all";
+        stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+            private ArrayList<ChatDTO> list = new ArrayList<ChatDTO>();
+
+            @Override
+            public void onResponse(String response) {
+
+                Log.v("resultValue", response);
+                try {
+                    JSONObject jsonObject = new JSONObject(response);
+                    JSONArray numArray = jsonObject.getJSONArray("board_text_num");
+                    JSONArray jsonArray = jsonObject.getJSONArray("board_title");
+                    JSONArray jsonArray1 = jsonObject.getJSONArray("member_lol_name");
+                    JSONArray jsonArray2 = jsonObject.getJSONArray("board_time");
+                    JSONArray jsonArray3 = jsonObject.getJSONArray("board_text");
+                    JSONArray jsonArray4 = jsonObject.getJSONArray("board_num");
+                    Log.v("asdfadsfasdf",jsonArray4.getString(0));
+
+                    tv_main_qa.setText(jsonArray.getString(0));
+                    tv_main_qa_text.setText(jsonArray3.getString(0));
+
+
+
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                // 에러 감지하는 곳
+                //Server 통신시 Error발생 하면 오는 곳
+                error.printStackTrace();
+            }
+        }) {
+
+            @Override
+            protected Response<String> parseNetworkResponse(NetworkResponse response) {
+
+                try {
+                    String utf8String = new String(response.data, "UTF-8");
+                    return Response.success(utf8String, HttpHeaderParser.parseCacheHeaders(response)); //인코딩하는 코드
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
+
+                return super.parseNetworkResponse(response);
+
+
+            }
+
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<String, String>();
+
+
+
+
+                return params;
+
+            }
+        };
+
+
+        queue.add(stringRequest);
+
+
+    }
 
 
 

@@ -195,7 +195,7 @@ public class ranking extends AppCompatActivity {
                         rank = (i+1);
                         String team_name = jsonArray.getString(i);
                         String team_score = jsonArray1.getString(i);
-                        tv_rank_team_rank.setText(rank+"");
+
 
                         adapter.notifyDataSetChanged();
                         adapter2.notifyDataSetChanged();
@@ -217,7 +217,7 @@ public class ranking extends AppCompatActivity {
                             Log.v("num",a+"");
 
                             tv_rank_team_score.setText(jsonArray1.getString(a));
-
+                            tv_rank_team_rank.setText(a+1+"");
                         }
 
                     }

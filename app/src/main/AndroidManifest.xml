@@ -16,7 +16,7 @@
         <activity android:name=".Regulation2"></activity>
         <activity android:name=".Recruting_chat" />
         <activity android:name=".QuestionAnswer" />
-        <activity android:name=".Survival">
+        <activity android:name=".Login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -29,7 +29,7 @@
         <activity android:name=".MainPage" />
         <activity android:name=".join" />
         <activity android:name=".imgChoice" />
-        <activity android:name=".Login"></activity>
+        <activity android:name=".Survival"></activity>
         <activity android:name=".Table" />
         <activity android:name=".id_find" />
         <activity android:name=".pw_find" />

@@ -38,8 +38,8 @@ public class CommentAdapter extends BaseAdapter {
             if (!dto.getComment().equals(" ")){
 
                 convertView = inflater.inflate(R.layout.comment, parent, false);
-                TextView comment_lol_name = convertView.findViewById(R.id.comment_lol_name);
-                TextView comment_text = convertView.findViewById(R.id.comment_text);
+                TextView comment_lol_name = convertView.findViewById(R.id.qa_lol_name);
+                TextView comment_text = convertView.findViewById(R.id.qa_text);
 
                 comment_lol_name.setText(dto.getLol_name());
                 comment_text.setText(dto.getComment());

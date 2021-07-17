@@ -63,15 +63,33 @@ public class BoardAdapter extends BaseAdapter {
                     intent.putExtra("board_text_num",dto.getNum());
                     intent.putExtra("board_num",dto.getBoard_num());
                     intent.putExtra("name",dto.getName());
-
                     context.startActivity(intent);
                     Log.v("aa","인텐트성공");
-                }else if(dto.getBoard_num().equals("2")){
-                    Intent intent = new Intent(parent.getContext(),QuestionAnswer.class);
                 }else if(dto.getBoard_num().equals("3")){
+                    Intent intent = new Intent(parent.getContext(),QuestionAnswer.class);
+                    intent.putExtra("board_text_num",dto.getNum());
+                    intent.putExtra("board_num",dto.getBoard_num());
+                    intent.putExtra("name",dto.getName());
+                    intent.putExtra("title",dto.getTitle());
+                    intent.putExtra("text",dto.getText());
+                    context.startActivity(intent);
+
+                }else if((dto.getBoard_num()+"").equals("2")){
                     Intent intent = new Intent(parent.getContext(),Recruting_chat.class);
+                    intent.putExtra("board_text_num",dto.getNum());
+                    intent.putExtra("board_num",dto.getBoard_num());
+                    intent.putExtra("name",dto.getName());
+                    intent.putExtra("title",dto.getTitle());
+                    intent.putExtra("text",dto.getText());
+                    context.startActivity(intent);
                 }else{
                     Intent intent = new Intent(parent.getContext(),TeamCreateAttend.class);
+                    intent.putExtra("board_text_num",dto.getNum());
+                    intent.putExtra("board_num",dto.getBoard_num());
+                    intent.putExtra("name",dto.getName());
+                    intent.putExtra("title",dto.getTitle());
+                    intent.putExtra("text",dto.getText());
+                    context.startActivity(intent);
                 }
 
 
