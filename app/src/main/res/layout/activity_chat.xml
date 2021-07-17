@@ -26,11 +26,11 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/team_name"
         android:layout_width="match_parent"
         android:layout_height="28dp"
         android:layout_margin="10dp"
-        android:text="OO팀 채팅방"
+        android:text="떡잎방범대"
         android:textColor="#000000"
         android:textSize="18sp" />
 

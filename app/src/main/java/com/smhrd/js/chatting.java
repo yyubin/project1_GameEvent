@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -52,7 +53,7 @@ public class chatting extends AppCompatActivity {
 //.ListView listView1 = (ListView) findViewById(R.id.listView1)
 
         chatlist = (ListView) findViewById(R.id.chatlist);
-
+        TextView team_name = findViewById(R.id.team_name);
         edt_chat = findViewById(R.id.edt_chat);
         btn_chat_submit = findViewById(R.id.btn_chat_submit);
 
@@ -60,6 +61,10 @@ public class chatting extends AppCompatActivity {
         try {
             JSONObject jsonObject = new JSONObject(member);
             lol_name = jsonObject.getString("lol_name");
+            String team=jsonObject.getString("team_name");
+            Log.v("팀네임", team);
+            team_name.setText(team);
+
             Log.v("lol_name", lol_name);
         } catch (JSONException e) {
             e.printStackTrace();
@@ -76,7 +81,11 @@ public class chatting extends AppCompatActivity {
 
             }
         });
+
+
+
     }
+
 
 
     public void sendRequest() { // get방식 post방식 get방식은 url공유가능
@@ -93,7 +102,7 @@ public class chatting extends AppCompatActivity {
                 try {
                     JSONObject jsonObject = new JSONObject(response);
                     JSONArray jsonArray = jsonObject.getJSONArray("member_lol_name");
-                    JSONArray jsonArray1 = jsonObject.getJSONArray("chatting_text");
+                    JSONArray jsonArray1 = jsonObject.getJSONArray("chat");
                     Log.v("lol_name", jsonArray + "");
                     Log.v("chat", jsonArray1 + "");
 

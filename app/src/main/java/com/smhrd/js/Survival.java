@@ -116,12 +116,24 @@ public class Survival extends AppCompatActivity {
                                 if (arr1[i].getText().toString().equals(team_16_name[j])) {// 기존 8팀 중
 
                                     arr2[a].setText(team_16_name[j]);
+
                                     a++;
 
                                 }
 
+
                             }
                         }
+
+
+//                            for(int j=0; j<4; j++){
+//                                for(int i=0; i< arr1.length; i++){
+//                                if(!arr1[i].getText().toString().equals(arr2[j].getText().toString())){
+//                                    arr1[i].setBackgroundResource(R.drawable.editbox3);
+//                                }
+//                            }
+//
+//                        }
 
 
 
@@ -138,6 +150,7 @@ public class Survival extends AppCompatActivity {
                         }
                     }
                 }
+                b=0;
 
         }
         if(!team_4_name[0].isEmpty()){

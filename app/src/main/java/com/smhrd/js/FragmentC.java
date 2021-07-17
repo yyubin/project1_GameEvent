@@ -65,7 +65,7 @@ public class FragmentC extends Fragment {
             e.printStackTrace();
         }
 
-        chatSelect();
+        sendRequest();
 
 
         btn_chat_submit.setOnClickListener(new View.OnClickListener() {
@@ -151,12 +151,16 @@ public class FragmentC extends Fragment {
                 try {
                     JSONObject jsonObject = new JSONObject(member);
                     String lol_name = jsonObject.getString("lol_name");
+                    String team_name = jsonObject.getString("team_name");
+                    params.put("team_name",team_name);
                     params.put("member_lol_name", lol_name);
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
 
-                params.put("chatting_text", edt_chat.getText().toString());
+                if(!edt_chat.getText().toString().equals("")){
+                    params.put("chatting_text", edt_chat.getText().toString());
+                }
                 Log.v("aaaaaaaaa",edt_chat.getText().toString());
 
 
@@ -172,70 +176,70 @@ public class FragmentC extends Fragment {
 
     }
 
-        public void chatSelect() { // get방식 post방식 get방식은 url공유가능
-        adapter = new ChatAdapter();
-        queue = Volley.newRequestQueue(getContext());
-        String url = "http://121.147.52.82:3100/chatting";
-        stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
-            private ArrayList<ChatDTO> list = new ArrayList<ChatDTO>();
-
-            @Override
-            public void onResponse(String response) {
-
-                Log.v("resultValue", response);
-                try {
-                    JSONObject jsonObject = new JSONObject(response);
-                    JSONArray jsonArray = jsonObject.getJSONArray("member_lol_name");
-                    JSONArray jsonArray1 = jsonObject.getJSONArray("chatting_text");
-                    Log.v("lol_name", jsonArray + "");
-                    Log.v("chat", jsonArray1 + "");
-
-                    for (int i = 0; i < jsonArray.length(); i++) {
-                        String id = jsonArray.getString(i);
-                        String chat = jsonArray1.getString(i);
-
-                        adapter.addItem(id, chat);
-
-                    }
-                    chatlist.setAdapter(adapter);
-                    chatlist.setSelection(adapter.getCount() - 1);
-
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-
-                error.printStackTrace();
-            }
-        }) {
-
-            @Override
-            protected Response<String> parseNetworkResponse(NetworkResponse response) {
-
-                try { // try catch는 string타입 아닌경우를 대비함
-                    String utf8String = new String(response.data, "UTF-8");
-                    return Response.success(utf8String, HttpHeaderParser.parseCacheHeaders(response)); //인코딩하는 코드
-                } catch (UnsupportedEncodingException e) {
-                    e.printStackTrace();
-                }
-                return super.parseNetworkResponse(response);
-
-            }
-
-            @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String, String> params = new HashMap<String, String>();
-
-                return params;
-            }
-        };
-
-        queue.add(stringRequest);
-
-
-    }
+//        public void chatSelect() { // get방식 post방식 get방식은 url공유가능
+//        adapter = new ChatAdapter();
+//        queue = Volley.newRequestQueue(getContext());
+//        String url = "http://121.147.52.82:3100/chatting";
+//        stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+//            private ArrayList<ChatDTO> list = new ArrayList<ChatDTO>();
+//
+//            @Override
+//            public void onResponse(String response) {
+//
+//                Log.v("resultValue", response);
+//                try {
+//                    JSONObject jsonObject = new JSONObject(response);
+//                    JSONArray jsonArray = jsonObject.getJSONArray("member_lol_name");
+//                    JSONArray jsonArray1 = jsonObject.getJSONArray("chatting_text");
+//                    Log.v("lol_name", jsonArray + "");
+//                    Log.v("chat", jsonArray1 + "");
+//
+//                    for (int i = 0; i < jsonArray.length(); i++) {
+//                        String id = jsonArray.getString(i);
+//                        String chat = jsonArray1.getString(i);
+//
+//                        adapter.addItem(id, chat);
+//
+//                    }
+//                    chatlist.setAdapter(adapter);
+//                    chatlist.setSelection(adapter.getCount() - 1);
+//
+//                } catch (JSONException e) {
+//                    e.printStackTrace();
+//                }
+//
+//            }
+//        }, new Response.ErrorListener() {
+//            @Override
+//            public void onErrorResponse(VolleyError error) {
+//
+//                error.printStackTrace();
+//            }
+//        }) {
+//
+//            @Override
+//            protected Response<String> parseNetworkResponse(NetworkResponse response) {
+//
+//                try { // try catch는 string타입 아닌경우를 대비함
+//                    String utf8String = new String(response.data, "UTF-8");
+//                    return Response.success(utf8String, HttpHeaderParser.parseCacheHeaders(response)); //인코딩하는 코드
+//                } catch (UnsupportedEncodingException e) {
+//                    e.printStackTrace();
+//                }
+//                return super.parseNetworkResponse(response);
+//
+//            }
+//
+//            @Override
+//            protected Map<String, String> getParams() throws AuthFailureError {
+//                Map<String, String> params = new HashMap<String, String>();
+//
+//                return params;
+//            }
+//        };
+//
+//        queue.add(stringRequest);
+//
+//
+//    }
 }
