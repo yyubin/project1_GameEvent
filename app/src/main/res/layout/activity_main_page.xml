@@ -282,18 +282,17 @@
                 android:layout_height="match_parent">
 
                 <ImageView
-                    android:id="@+id/imageView16"
+                    android:id="@+id/imageView33"
                     android:layout_width="360dp"
                     android:layout_height="140dp"
                     android:layout_gravity="center_horizontal"
-                    app:srcCompat="@drawable/table" />
+                    app:srcCompat="@drawable/ranktable" />
 
                 <TextView
                     android:id="@+id/main_rank_1_name"
-                    android:layout_width="150dp"
+                    android:layout_width="210dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="65dp"
-                    android:layout_marginLeft="65dp"
+                    android:layout_marginLeft="80dp"
                     android:layout_marginTop="43dp"
                     android:gravity="center_horizontal"
                     android:text="TextView"
@@ -302,10 +301,9 @@
 
                 <TextView
                     android:id="@+id/main_rank_2_name"
-                    android:layout_width="150dp"
+                    android:layout_width="210dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="65dp"
-                    android:layout_marginLeft="65dp"
+                    android:layout_marginLeft="80dp"
                     android:layout_marginTop="74dp"
                     android:gravity="center_horizontal"
                     android:text="TextView"
@@ -314,10 +312,9 @@
 
                 <TextView
                     android:id="@+id/main_rank_3_name"
-                    android:layout_width="150dp"
+                    android:layout_width="210dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="65dp"
-                    android:layout_marginLeft="65dp"
+                    android:layout_marginLeft="80dp"
                     android:layout_marginTop="107dp"
                     android:gravity="center_horizontal"
                     android:text="TextView"
@@ -328,8 +325,7 @@
                     android:id="@+id/tv_rank_1_score"
                     android:layout_width="75dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="222dp"
-                    android:layout_marginLeft="222dp"
+                    android:layout_marginLeft="290dp"
                     android:layout_marginTop="43dp"
                     android:gravity="center_horizontal"
                     android:text="TextView"
@@ -340,8 +336,7 @@
                     android:id="@+id/tv_rank_2_score"
                     android:layout_width="75dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="222dp"
-                    android:layout_marginLeft="222dp"
+                    android:layout_marginLeft="290dp"
                     android:layout_marginTop="74dp"
                     android:gravity="center_horizontal"
                     android:text="TextView"
@@ -352,49 +347,13 @@
                     android:id="@+id/tv_rank_3_score"
                     android:layout_width="75dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="222dp"
-                    android:layout_marginLeft="222dp"
+                    android:layout_marginLeft="290dp"
                     android:layout_marginTop="107dp"
                     android:gravity="center_horizontal"
                     android:text="TextView"
                     android:textColor="#000000"
                     android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/textView36"
-                    android:layout_width="75dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="300dp"
-                    android:layout_marginLeft="300dp"
-                    android:layout_marginTop="107dp"
-                    android:gravity="center_horizontal"
-                    android:text="TextView"
-                    android:textColor="#000000"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/textView35"
-                    android:layout_width="75dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="300dp"
-                    android:layout_marginLeft="300dp"
-                    android:layout_marginTop="74dp"
-                    android:gravity="center_horizontal"
-                    android:text="TextView"
-                    android:textColor="#000000"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/textView34"
-                    android:layout_width="75dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="300dp"
-                    android:layout_marginLeft="300dp"
-                    android:layout_marginTop="43dp"
-                    android:gravity="center_horizontal"
-                    android:text="TextView"
-                    android:textColor="#000000"
-                    android:textStyle="bold" />
             </FrameLayout>
 
             <LinearLayout
