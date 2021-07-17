@@ -30,7 +30,7 @@ public class Survival extends AppCompatActivity {
     private RequestQueue queue;
     private StringRequest stringRequest;
 
-    private TextView tv_team;
+    private TextView tv_team, tv_line;
 
     int arr_32[] = new int[]{R.id.tv_sv_32_1, R.id.tv_sv_32_2, R.id.tv_sv_32_3, R.id.tv_sv_32_4,
             R.id.tv_sv_32_5, R.id.tv_sv_32_6, R.id.tv_sv_32_7, R.id.tv_sv_32_8};
@@ -87,12 +87,16 @@ public class Survival extends AppCompatActivity {
 
         if(v.getId()== R.id.btn_a){
             btn=0;
+            tv_line.setText("A조 대진표");
         }else if(v.getId()== R.id.btn_b){
             btn=8;
+            tv_line.setText("B조 대진표");
         }else if(v.getId()== R.id.btn_c){
             btn=16;
+            tv_line.setText("C조 대진표");
         }else if(v.getId()== R.id.btn_d){
             btn=24;
+            tv_line.setText("D조 대진표");
         }
 
         Log.v("btn값",btn+"");
@@ -126,14 +130,16 @@ public class Survival extends AppCompatActivity {
                         }
 
 
-//                            for(int j=0; j<4; j++){
-//                                for(int i=0; i< arr1.length; i++){
-//                                if(!arr1[i].getText().toString().equals(arr2[j].getText().toString())){
-//                                    arr1[i].setBackgroundResource(R.drawable.editbox3);
-//                                }
-//                            }
-//
-//                        }
+
+                            for(int i=0; i< arr1.length; i++){
+                                for(int j=0; j<4; j++){
+                                if(!arr1[i].getText().toString().equals(arr2[j].getText().toString())){
+                                    arr1[i].setBackgroundResource(R.drawable.editbox3);
+                                    break;
+                                }
+                            }
+
+                        }
 
 
 
@@ -206,13 +212,15 @@ public class Survival extends AppCompatActivity {
         tv_date_3 = findViewById(R.id.tv_date_2);
         tv_date_4 = findViewById(R.id.tv_date_3);
 
+        tv_line = findViewById(R.id.tv_line);
+
         btn_a = findViewById(R.id.btn_a);
         btn_b = findViewById(R.id.btn_b);
         btn_c = findViewById(R.id.btn_c);
         btn_d = findViewById(R.id.btn_d);
 
         sendRequest();
-        sendRequest1();
+//        sendRequest1();
 
         btn_a.setOnClickListener(this::onClick);
         btn_b.setOnClickListener(this::onClick);
@@ -302,66 +310,66 @@ public class Survival extends AppCompatActivity {
         };
         queue.add(stringRequest);
     }
-
-    public void sendRequest1() {
-        adapter = new BattleAdapter();
-        queue = Volley.newRequestQueue(this);
-        String url = "http://121.147.52.82:3100/battle_tournament_update";
-
-        stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
-            private ArrayList<RankDTO> list = new ArrayList<RankDTO>();
-
-            @Override
-            public void onResponse(String response) {
-                //Server로부터 데이터를 받아온 곳
-
-            }
-
-
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                //Server 통신시 Error 발생하면 오는 곳
-                error.printStackTrace();
-            }
-        }) {
-            protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String, String> params = new HashMap<String, String>();
-                JSONObject wrapObject = new JSONObject();
-                JSONArray jsonArray = new JSONArray();
-                String arr[] = new String[team_16_name.length];
-                for (int i = 0; i < team_16_name.length; i++) {
-                    arr[i] = team_16_name[i];
-                }
-                try {
-
-                    JSONObject jsonObject = new JSONObject();
-                    for (int j = 0; j < team_16_name.length; j++) {
-                        jsonObject.put("team_name", arr[j]);
-
-
-                        jsonArray.put(jsonObject);
-                    }
-                    wrapObject.put("team_name", jsonArray);
-
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-                Log.v("adsfasdfasdf",wrapObject.toString());
-
-                params.put("params", wrapObject.toString());
-
-
-
-                return params;
-
-            }
-        };
-
-
-        queue.add(stringRequest);
-
-
-    }
+//
+//    public void sendRequest1() {
+//        adapter = new BattleAdapter();
+//        queue = Volley.newRequestQueue(this);
+//        String url = "http://121.147.52.82:3100/battle_tournament_update";
+//
+//        stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+//            private ArrayList<RankDTO> list = new ArrayList<RankDTO>();
+//
+//            @Override
+//            public void onResponse(String response) {
+//                //Server로부터 데이터를 받아온 곳
+//
+//            }
+//
+//
+//        }, new Response.ErrorListener() {
+//            @Override
+//            public void onErrorResponse(VolleyError error) {
+//                //Server 통신시 Error 발생하면 오는 곳
+//                error.printStackTrace();
+//            }
+//        }) {
+//            protected Map<String, String> getParams() throws AuthFailureError {
+//                Map<String, String> params = new HashMap<String, String>();
+//                JSONObject wrapObject = new JSONObject();
+//                JSONArray jsonArray = new JSONArray();
+//                String arr[] = new String[team_16_name.length];
+//                for (int i = 0; i < team_16_name.length; i++) {
+//                    arr[i] = team_16_name[i];
+//                }
+//                try {
+//
+//                    JSONObject jsonObject = new JSONObject();
+//                    for (int j = 0; j < team_16_name.length; j++) {
+//                        jsonObject.put("team_name", arr[j]);
+//
+//
+//                        jsonArray.put(jsonObject);
+//                    }
+//                    wrapObject.put("team_name", jsonArray);
+//
+//                } catch (JSONException e) {
+//                    e.printStackTrace();
+//                }
+//                Log.v("adsfasdfasdf",wrapObject.toString());
+//
+//                params.put("params", wrapObject.toString());
+//
+//
+//
+//                return params;
+//
+//            }
+//        };
+//
+//
+//        queue.add(stringRequest);
+//
+//
+//    }
 
 }

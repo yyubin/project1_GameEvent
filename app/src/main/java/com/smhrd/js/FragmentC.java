@@ -65,14 +65,18 @@ public class FragmentC extends Fragment {
             e.printStackTrace();
         }
 
-        sendRequest();
+        chatSelect();
+
+
+        MyThread Thread = new MyThread();
+        Thread.start();
 
 
         btn_chat_submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 sendRequest();
-
+                edt_chat.setText("");
 
 
             }
@@ -88,7 +92,7 @@ public class FragmentC extends Fragment {
     public void sendRequest() { // get방식 post방식 get방식은 url공유가능
         adapter = new ChatAdapter();
         queue = Volley.newRequestQueue(getContext());
-        String url = "http://121.147.52.82:3100/chatting";
+        String url = "http://121.147.52.82:3100/chatting_write";
         stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             private ArrayList<ChatDTO> list = new ArrayList<ChatDTO>();
 
@@ -176,70 +180,97 @@ public class FragmentC extends Fragment {
 
     }
 
-//        public void chatSelect() { // get방식 post방식 get방식은 url공유가능
-//        adapter = new ChatAdapter();
-//        queue = Volley.newRequestQueue(getContext());
-//        String url = "http://121.147.52.82:3100/chatting";
-//        stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
-//            private ArrayList<ChatDTO> list = new ArrayList<ChatDTO>();
-//
-//            @Override
-//            public void onResponse(String response) {
-//
-//                Log.v("resultValue", response);
-//                try {
-//                    JSONObject jsonObject = new JSONObject(response);
-//                    JSONArray jsonArray = jsonObject.getJSONArray("member_lol_name");
-//                    JSONArray jsonArray1 = jsonObject.getJSONArray("chatting_text");
-//                    Log.v("lol_name", jsonArray + "");
-//                    Log.v("chat", jsonArray1 + "");
-//
-//                    for (int i = 0; i < jsonArray.length(); i++) {
-//                        String id = jsonArray.getString(i);
-//                        String chat = jsonArray1.getString(i);
-//
-//                        adapter.addItem(id, chat);
-//
-//                    }
-//                    chatlist.setAdapter(adapter);
-//                    chatlist.setSelection(adapter.getCount() - 1);
-//
-//                } catch (JSONException e) {
-//                    e.printStackTrace();
-//                }
-//
-//            }
-//        }, new Response.ErrorListener() {
-//            @Override
-//            public void onErrorResponse(VolleyError error) {
-//
-//                error.printStackTrace();
-//            }
-//        }) {
-//
-//            @Override
-//            protected Response<String> parseNetworkResponse(NetworkResponse response) {
-//
-//                try { // try catch는 string타입 아닌경우를 대비함
-//                    String utf8String = new String(response.data, "UTF-8");
-//                    return Response.success(utf8String, HttpHeaderParser.parseCacheHeaders(response)); //인코딩하는 코드
-//                } catch (UnsupportedEncodingException e) {
-//                    e.printStackTrace();
-//                }
-//                return super.parseNetworkResponse(response);
-//
-//            }
-//
-//            @Override
-//            protected Map<String, String> getParams() throws AuthFailureError {
-//                Map<String, String> params = new HashMap<String, String>();
-//
-//                return params;
-//            }
-//        };
-//
-//        queue.add(stringRequest);
-//
-//
-//    }
+        public void chatSelect() { // get방식 post방식 get방식은 url공유가능
+        adapter = new ChatAdapter();
+        queue = Volley.newRequestQueue(getContext());
+        String url = "http://121.147.52.82:3100/chatting_select";
+        stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+            private ArrayList<ChatDTO> list = new ArrayList<ChatDTO>();
+
+            @Override
+            public void onResponse(String response) {
+
+                Log.v("resultValue", response);
+                try {
+                    JSONObject jsonObject = new JSONObject(response);
+                    JSONArray jsonArray = jsonObject.getJSONArray("member_lol_name");
+                    JSONArray jsonArray1 = jsonObject.getJSONArray("chatting_text");
+                    Log.v("lol_name", jsonArray + "");
+                    Log.v("chat", jsonArray1 + "");
+
+                    for (int i = 0; i < jsonArray.length(); i++) {
+                        String id = jsonArray.getString(i);
+                        String chat = jsonArray1.getString(i);
+
+                        adapter.addItem(id, chat);
+
+                    }
+                    chatlist.setAdapter(adapter);
+                    chatlist.setSelection(adapter.getCount() - 1);
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+                error.printStackTrace();
+            }
+        }) {
+
+            @Override
+            protected Response<String> parseNetworkResponse(NetworkResponse response) {
+
+                try { // try catch는 string타입 아닌경우를 대비함
+                    String utf8String = new String(response.data, "UTF-8");
+                    return Response.success(utf8String, HttpHeaderParser.parseCacheHeaders(response)); //인코딩하는 코드
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
+                return super.parseNetworkResponse(response);
+
+            }
+
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<String, String>();
+
+                String member = PreferenceManager.getString(getContext(), "login");
+                try {
+                    JSONObject jsonObject = new JSONObject(member);
+                    String team = jsonObject.getString("team_name");
+                    params.put("team_name",team);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+                return params;
+            }
+        };
+
+        queue.add(stringRequest);
+
+
+    }
+
+    public class MyThread extends Thread{
+        @Override
+        public void run() {
+
+            while (true){
+                chatSelect();
+                Log.v("스레드 실행","스레드 실행");
+                try {
+                    Thread.sleep(4000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+
+
+        }
+    }
 }

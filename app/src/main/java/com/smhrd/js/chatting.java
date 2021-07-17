@@ -42,6 +42,8 @@ public class chatting extends AppCompatActivity {
     private String lol_name;
     private ArrayList<ChatDTO> list = new ArrayList<ChatDTO>();
 
+    private Thread MyThread;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,14 +72,14 @@ public class chatting extends AppCompatActivity {
         }
 
 
-        MyThread myThread = new MyThread();
-        myThread.start();
-        chatSelect();
+        MyThread Thread = new MyThread();
+        Thread.start();
+
 
         btn_chat_submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                sendRequest();
+
 
 
 
@@ -93,7 +95,7 @@ public class chatting extends AppCompatActivity {
     public void sendRequest() { // get방식 post방식 get방식은 url공유가능
         adapter = new ChatAdapter();
         queue = Volley.newRequestQueue(this);
-        String url = "http://121.147.52.82:3100/chatting";
+        String url = "http://121.147.52.82:3100/chatting_write";
         stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             private ArrayList<ChatDTO> list = new ArrayList<ChatDTO>();
 
@@ -161,7 +163,7 @@ public class chatting extends AppCompatActivity {
                     e.printStackTrace();
                 }
 
-                if(!edt_chat.getText().toString().equals("")){
+                if(!edt_chat.getText().toString().equals(null)){
                     params.put("chatting_text", edt_chat.getText().toString());
                 }
 
@@ -184,7 +186,7 @@ public class chatting extends AppCompatActivity {
     public void chatSelect() { // get방식 post방식 get방식은 url공유가능
         adapter = new ChatAdapter();
         queue = Volley.newRequestQueue(this);
-        String url = "http://121.147.52.82:3100/chatting";
+        String url = "http://121.147.52.82:3100/chatting_select";
         stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             private ArrayList<ChatDTO> list = new ArrayList<ChatDTO>();
 
@@ -265,6 +267,7 @@ public class chatting extends AppCompatActivity {
 
             while (true){
                 chatSelect();
+                Log.v("스레드 실행","스레드 실행");
                 try {
                     Thread.sleep(400);
                 } catch (InterruptedException e) {
