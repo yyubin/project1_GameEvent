@@ -2,14 +2,13 @@ package com.smhrd.js;
 
 import android.os.Bundle;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 
-import androidx.fragment.app.Fragment;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.NetworkResponse;
@@ -30,7 +29,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class FragmentC extends Fragment {
+public class chatting extends AppCompatActivity {
 
     private EditText edt_chat;
     private Button btn_chat_submit;
@@ -43,29 +42,34 @@ public class FragmentC extends Fragment {
     private String lol_name;
     private ArrayList<ChatDTO> list = new ArrayList<ChatDTO>();
 
+    private Thread MyThread;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_chat);
 
-        View fragment = inflater.inflate(R.layout.activity_chat, container, false);
+//
 
+//.ListView listView1 = (ListView) findViewById(R.id.listView1)
 
+        chatlist = (ListView) findViewById(R.id.chatlist);
+        TextView team_name = findViewById(R.id.team_name);
+        edt_chat = findViewById(R.id.edt_chat);
+        btn_chat_submit = findViewById(R.id.btn_chat_submit);
 
-        chatlist = fragment.findViewById(R.id.chatlist);
-
-        edt_chat = fragment.findViewById(R.id.edt_chat);
-        btn_chat_submit = fragment.findViewById(R.id.btn_chat_submit);
-
-        String member = PreferenceManager.getString(getContext(), "login");
+        String member = PreferenceManager.getString(getApplicationContext(), "login");
         try {
             JSONObject jsonObject = new JSONObject(member);
             lol_name = jsonObject.getString("lol_name");
+            String team=jsonObject.getString("team_name");
+            Log.v("팀네임", team);
+            team_name.setText(team);
+
             Log.v("lol_name", lol_name);
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
-        chatSelect();
 
 
         MyThread Thread = new MyThread();
@@ -75,23 +79,22 @@ public class FragmentC extends Fragment {
         btn_chat_submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                sendRequest();
-                edt_chat.setText("");
+
+
 
 
             }
         });
 
-        return fragment;
+
 
     }
 
 
 
-
     public void sendRequest() { // get방식 post방식 get방식은 url공유가능
         adapter = new ChatAdapter();
-        queue = Volley.newRequestQueue(getContext());
+        queue = Volley.newRequestQueue(this);
         String url = "http://121.147.52.82:3100/chatting_write";
         stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             private ArrayList<ChatDTO> list = new ArrayList<ChatDTO>();
@@ -103,7 +106,7 @@ public class FragmentC extends Fragment {
                 try {
                     JSONObject jsonObject = new JSONObject(response);
                     JSONArray jsonArray = jsonObject.getJSONArray("member_lol_name");
-                    JSONArray jsonArray1 = jsonObject.getJSONArray("chatting_text");
+                    JSONArray jsonArray1 = jsonObject.getJSONArray("chat");
                     Log.v("lol_name", jsonArray + "");
                     Log.v("chat", jsonArray1 + "");
 
@@ -151,20 +154,19 @@ public class FragmentC extends Fragment {
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params = new HashMap<String, String>();
 
-                String member = PreferenceManager.getString(getContext(), "login");
+                String member = PreferenceManager.getString(getApplicationContext(), "login");
                 try {
                     JSONObject jsonObject = new JSONObject(member);
                     String lol_name = jsonObject.getString("lol_name");
-                    String team_name = jsonObject.getString("team_name");
-                    params.put("team_name",team_name);
                     params.put("member_lol_name", lol_name);
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
 
-                if(!edt_chat.getText().toString().equals("")){
+                if(!edt_chat.getText().toString().equals(null)){
                     params.put("chatting_text", edt_chat.getText().toString());
                 }
+
                 Log.v("aaaaaaaaa",edt_chat.getText().toString());
 
 
@@ -180,9 +182,10 @@ public class FragmentC extends Fragment {
 
     }
 
+
     public void chatSelect() { // get방식 post방식 get방식은 url공유가능
         adapter = new ChatAdapter();
-        queue = Volley.newRequestQueue(getContext());
+        queue = Volley.newRequestQueue(this);
         String url = "http://121.147.52.82:3100/chatting_select";
         stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             private ArrayList<ChatDTO> list = new ArrayList<ChatDTO>();
@@ -238,7 +241,7 @@ public class FragmentC extends Fragment {
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params = new HashMap<String, String>();
 
-                String member = PreferenceManager.getString(getContext(), "login");
+                String member = PreferenceManager.getString(getApplicationContext(), "login");
                 try {
                     JSONObject jsonObject = new JSONObject(member);
                     String team = jsonObject.getString("team_name");
@@ -246,6 +249,7 @@ public class FragmentC extends Fragment {
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
+
 
                 return params;
             }
@@ -256,6 +260,7 @@ public class FragmentC extends Fragment {
 
     }
 
+    //
     public class MyThread extends Thread{
         @Override
         public void run() {
@@ -264,7 +269,7 @@ public class FragmentC extends Fragment {
                 chatSelect();
                 Log.v("스레드 실행","스레드 실행");
                 try {
-                    Thread.sleep(4000);
+                    Thread.sleep(400);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -273,4 +278,6 @@ public class FragmentC extends Fragment {
 
         }
     }
+
 }
+

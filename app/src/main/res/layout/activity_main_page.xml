@@ -353,13 +353,12 @@
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:id="@+id/img_main_free"
+                        android:id="@+id/imageView16"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:layout_marginStart="50dp"
                         android:layout_marginLeft="50dp"
                         android:layout_marginTop="25dp"
-                        tools:srcCompat="@drawable/logo18" />
+                        app:srcCompat="@drawable/logo13" />
 
                     <TextView
                         android:id="@+id/tv_main_free_title"
@@ -454,13 +453,12 @@
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:id="@+id/img_main_qa"
+                        android:id="@+id/imageView48"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:layout_marginStart="50dp"
                         android:layout_marginLeft="50dp"
                         android:layout_marginTop="25dp"
-                        tools:srcCompat="@drawable/logo14" />
+                        app:srcCompat="@drawable/logo14" />
 
                     <TextView
                         android:id="@+id/tv_main_qa"
@@ -553,13 +551,12 @@
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:id="@+id/img_main_recurit"
+                        android:id="@+id/imageView49"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:layout_marginStart="50dp"
                         android:layout_marginLeft="50dp"
                         android:layout_marginTop="25dp"
-                        tools:srcCompat="@drawable/logo19" />
+                        app:srcCompat="@drawable/logo10" />
 
                     <TextView
                         android:id="@+id/tv_main_recurit"
@@ -652,13 +649,12 @@
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:id="@+id/img_main_empowerment"
+                        android:id="@+id/imageView50"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:layout_marginStart="50dp"
                         android:layout_marginLeft="50dp"
                         android:layout_marginTop="25dp"
-                        tools:srcCompat="@drawable/logo8" />
+                        app:srcCompat="@drawable/logo19" />
 
                     <TextView
                         android:id="@+id/tv_main_empowerment"
@@ -668,7 +664,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="35dp"
                         android:layout_weight="1"
-                        android:text="TextView"
+                        android:text="무야호윤"
                         android:textColor="#000000"
                         android:textSize="16sp"
                         android:textStyle="bold" />
@@ -683,7 +679,7 @@
                     android:layout_marginLeft="50dp"
                     android:layout_marginTop="100dp"
                     android:layout_weight="1"
-                    android:text="TextView"
+                    android:text="https://comic.naver.com/index"
                     android:textColor="#000000" />
 
             </FrameLayout>
