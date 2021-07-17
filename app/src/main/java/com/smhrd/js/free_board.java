@@ -1,8 +1,11 @@
 package com.smhrd.js;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -19,6 +22,7 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
@@ -33,6 +37,7 @@ public class free_board extends AppCompatActivity {
 
     private BoardAdapter adapter;
     private ListView boardlist;
+    private TextView tv_board_go;
     private ArrayList<BoardDTO> list = new ArrayList<BoardDTO>();
 
 
@@ -40,6 +45,15 @@ public class free_board extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_free_board);
+        tv_board_go = findViewById(R.id.tv_board_go);
+
+        tv_board_go.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), Table.class);
+                startActivity(intent);
+            }
+        });
 
 
 

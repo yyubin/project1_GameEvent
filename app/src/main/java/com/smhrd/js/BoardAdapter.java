@@ -42,14 +42,14 @@ public class BoardAdapter extends BaseAdapter {
         }
 
         TextView tv_board_list_title = convertView.findViewById(R.id.tv_board_list_title);
-        TextView tv_board_list_num = convertView.findViewById(R.id.tv_board_list_num);
+//        TextView tv_board_list_num = convertView.findViewById(R.id.tv_board_list_num);
         TextView tv_board_list_text = convertView.findViewById(R.id.tv_board_list_text);
         TextView tv_board_list_time = convertView.findViewById(R.id.tv_board_list_time);
         TextView tv_board_list_name = convertView.findViewById(R.id.tv_board_list_name);
 
         tv_board_list_name.setText(dto.getName());
         tv_board_list_time.setText(dto.getTime());
-        tv_board_list_num.setText(dto.getNum());
+//        tv_board_list_num.setText(dto.getNum());
         tv_board_list_title.setText(dto.getTitle());
         tv_board_list_text.setText(dto.getText());
 
