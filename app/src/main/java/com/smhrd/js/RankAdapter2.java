@@ -9,8 +9,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class RankAdapter extends BaseAdapter {
-
+public class RankAdapter2 extends BaseAdapter {
     private ArrayList<RankDTO> list = new ArrayList<RankDTO>();
 
     @Override
@@ -33,26 +32,13 @@ public class RankAdapter extends BaseAdapter {
         Context context = parent.getContext(); //xml불러오기
         RankDTO dto = list.get(position);
 
-
-
-
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-            if(dto.getRank()<=3){
-
-                convertView = inflater.inflate(R.layout.rank1, parent, false);
-            }else {
-                convertView = inflater.inflate(R.layout.rank2, parent, false);
-            }
+            convertView = inflater.inflate(R.layout.activity_main_page, parent, false);
 
 
-        TextView tv_rank_rank = convertView.findViewById(R.id.tv_rank_rank);
-        TextView tv_rank_name = convertView.findViewById(R.id.tv_rank_name);
-        TextView tv_rank_score = convertView.findViewById(R.id.tv_rank_score);
 
-        tv_rank_rank.setText(dto.getRank()+"위");
-        tv_rank_name.setText(dto.getTeam_name());
-        tv_rank_score.setText(dto.getTeam_score());
+
 
         return convertView;
     }

@@ -1,6 +1,9 @@
 package com.smhrd.js;
 
+import android.content.Context;
+import android.icu.number.CompactNotation;
 import android.os.Bundle;
+import android.service.notification.NotificationListenerService;
 import android.util.Log;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -35,10 +38,81 @@ public class ranking extends AppCompatActivity {
 
     private ListView ranklist;
     private RankAdapter adapter;
+    private RankAdapter2 adapter2;
     private ArrayList<RankDTO> list = new ArrayList<RankDTO>();
 
     private int a,ad;
     String myteam, pac;
+
+    public Context context_ranking;
+
+    private NotificationListenerService.Ranking ranking;
+    private MainPage mainPage;
+    public ranking ranking_class;
+
+    private String rank_1_team, rank_2_team, rank_3_team, rank_1_score,rank_2_score,rank_3_score;
+
+    public ranking() {
+        this.ranking = ranking;
+    }
+
+    public ranking(String rank_1_team, String rank_2_team, String rank_3_team, String rank_1_score, String rank_2_score, String rank_3_score) {
+        this.rank_1_team = rank_1_team;
+        this.rank_2_team = rank_2_team;
+        this.rank_3_team = rank_3_team;
+        this.rank_1_score = rank_1_score;
+        this.rank_2_score = rank_2_score;
+        this.rank_3_score = rank_3_score;
+    }
+
+    public String getRank_1_team() {
+        return rank_1_team;
+    }
+
+    public void setRank_1_team(String rank_1_team) {
+        this.rank_1_team = rank_1_team;
+    }
+
+    public String getRank_2_team() {
+        return rank_2_team;
+    }
+
+    public void setRank_2_team(String rank_2_team) {
+        this.rank_2_team = rank_2_team;
+    }
+
+    public String getRank_3_team() {
+        return rank_3_team;
+    }
+
+    public void setRank_3_team(String rank_3_team) {
+        this.rank_3_team = rank_3_team;
+    }
+
+    public String getRank_1_score() {
+
+        return rank_1_score;
+    }
+
+    public void setRank_1_score(String rank_1_score) {
+        this.rank_1_score = rank_1_score;
+    }
+
+    public String getRank_2_score() {
+        return rank_2_score;
+    }
+
+    public void setRank_2_score(String rank_2_score) {
+        this.rank_2_score = rank_2_score;
+    }
+
+    public String getRank_3_score() {
+        return rank_3_score;
+    }
+
+    public void setRank_3_score(String rank_3_score) {
+        this.rank_3_score = rank_3_score;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +126,8 @@ public class ranking extends AppCompatActivity {
         tv_rank_team_score=findViewById(R.id.tv_rank_team_score);
 
         ranklist=findViewById(R.id.ranklist);
+
+
 
         sendRequest();
 //        sendRequest1();
@@ -74,6 +150,7 @@ public class ranking extends AppCompatActivity {
 
     public void sendRequest() {
         adapter = new RankAdapter();
+        adapter2 = new RankAdapter2();
         queue = Volley.newRequestQueue(this);
         String url = "http://121.147.52.82:3100/team_ranking";
 
@@ -121,8 +198,11 @@ public class ranking extends AppCompatActivity {
                         tv_rank_team_rank.setText(rank+"");
 
                         adapter.notifyDataSetChanged();
+                        adapter2.notifyDataSetChanged();
                         adapter.addItem(rank,team_name,team_score);
+                        adapter2.addItem(rank,team_name,team_score);
                         Log.v("1위",rank+"");
+
                         ranklist.setAdapter(adapter);
                         ranklist.setSelection(adapter.getCount() - 1);
 
@@ -143,6 +223,16 @@ public class ranking extends AppCompatActivity {
                     }
 
 
+                    MainPage mainPage = new MainPage();
+
+                    setRank_1_team(jsonArray.getString(0));
+                    Log.v("asdfasdf",getRank_1_team());
+
+                    setRank_1_score(jsonArray1.getString(0));
+                    setRank_2_team(jsonArray.getString(1));
+                    setRank_2_score(jsonArray1.getString(1));
+                    setRank_3_team(jsonArray.getString(2));
+                    setRank_3_score(jsonArray1.getString(2));
 
 
                 } catch (JSONException e) {

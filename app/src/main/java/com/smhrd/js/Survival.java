@@ -63,7 +63,7 @@ public class Survival extends AppCompatActivity {
             "돌머리","반짝이들",
             "주둥이","풍선팀",
             "산기슭","주주클럽",
-            "돌머리","쿵쿵따",
+            "나비","쿵쿵따",
             "헬로월드","망뚱이",
             "동물친구","꿈별이들",
             "왕짠돌","검은조직"};
@@ -80,6 +80,10 @@ public class Survival extends AppCompatActivity {
     public void onClick(View v) {
 
         int btn = 0;
+        int a =0;
+        int b=0;
+        int c=0;
+        int d=0;
 
         if(v.getId()== R.id.btn_a){
             btn=0;
@@ -93,53 +97,62 @@ public class Survival extends AppCompatActivity {
 
         Log.v("btn값",btn+"");
 
-        for(int i=0; i< arr_32.length; i++){
-            arr1[i].setText(arr_team1.get(arr_count.get(i+btn))+"");
-            Log.v("check1",arr1[i].getText().toString());
+        if(!arr_team1.get(0).isEmpty()){
+            for(int i=0; i< arr_32.length; i++){
+                arr1[i].setText(arr_team1.get(arr_count.get(i+btn))+"");
+                Log.v("check1",arr1[i].getText().toString());
 
+            }
         }
+
+
         if(!team_16_name[0].isEmpty()){
             btn=btn/2;
+            String into[] = new String[4];
+                     //4 setText
+                        // 16강에 속한 팀 8팀
+                        for (int i = 0; i < arr1.length; i++) { //16
+                            for (int j = btn; j < btn+4; j++) {
+                                if (arr1[i].getText().toString().equals(team_16_name[j])) {// 기존 8팀 중
 
-                for (int j = btn; j < team_16_name.length; j++) {
-                    for(int a=0; a<arr2.length; a++) {
-                    for (int i = 0; i < arr1.length; i++) {
-                        if (arr1[i].getText().toString().equals(team_16_name[j])) {
-                            arr2[a].setText(team_16_name[j]);
+                                    arr2[a].setText(team_16_name[j]);
+                                    a++;
 
+                                }
+
+                            }
                         }
-                    }
 
-                }
-            }
+
 
         }
         if(!team_8_name[0].isEmpty()){
             btn=btn/2;
 
-            for(int a=0; a<arr3.length; a++){
+
                 for(int i=0; i< arr2.length; i++){
                 for(int j=btn; j<team_8_name.length; j++){
                         if(arr2[i].getText().toString().equals(team_8_name[j])){
-                            arr3[a].setText(team_8_name[j]);
+                            arr3[b].setText(team_8_name[j]);
+                            b++;
                         }
                     }
                 }
-            }
+
         }
-//        if(!team_4_name[0].isEmpty()){
-//            btn=btn/2;
-//            int c=0;
-//            for(int j=btn; j<team_4_name.length; j++){
-//                for(int i=0; i< arr3.length; i++){
-//                    if(arr3[i].getText().toString().equals(team_4_name[j])){
-//                        arr4[c].setText(team_4_name[j]);
-//                        c++;
-//                    }
-//                }
-//            }
-//
-//        }
+        if(!team_4_name[0].isEmpty()){
+            btn=btn/2;
+
+            for(int j=btn; j<team_4_name.length; j++){
+                for(int i=0; i< arr3.length; i++){
+                    if(arr3[i].getText().toString().equals(team_4_name[j])){
+                        arr4[c].setText(team_4_name[j]);
+                        c++;
+                    }
+                }
+            }
+
+        }
 
         btn=0;
     }
@@ -299,22 +312,43 @@ public class Survival extends AppCompatActivity {
                 error.printStackTrace();
             }
         }) {
-            @Override
             protected Map<String, String> getParams() throws AuthFailureError {
-                //Server로 데이터 보낼 시 넣어주는 곳
-                Map<String, String> parmas = new HashMap<String, String>();
-                parmas.put("battle_name","브론즈리그");
+                Map<String, String> params = new HashMap<String, String>();
+                JSONObject wrapObject = new JSONObject();
+                JSONArray jsonArray = new JSONArray();
+                String arr[] = new String[team_16_name.length];
+                for (int i = 0; i < team_16_name.length; i++) {
+                    arr[i] = team_16_name[i];
+                }
+                try {
 
-                    parmas.put("team_name",team_16_name+"");
-                    Log.v("aaa",team_16_name+"");
+                    JSONObject jsonObject = new JSONObject();
+                    for (int j = 0; j < team_16_name.length; j++) {
+                        jsonObject.put("team_name", arr[j]);
 
 
-                return parmas;
+                        jsonArray.put(jsonObject);
+                    }
+                    wrapObject.put("team_name", jsonArray);
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                Log.v("adsfasdfasdf",wrapObject.toString());
+
+                params.put("params", wrapObject.toString());
+
+
+
+                return params;
 
             }
         };
-        queue.add(stringRequest);
-    }
 
+
+        queue.add(stringRequest);
+
+
+    }
 
 }
