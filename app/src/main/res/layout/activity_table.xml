@@ -115,7 +115,7 @@
                 app:backgroundTint="#1B1A1A" />
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/button_cancle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"

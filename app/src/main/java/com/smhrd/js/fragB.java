@@ -68,7 +68,7 @@ public class fragB extends Fragment {
         sendRequest();
 
         Intent intent = new Intent(getContext(), battle_attend.class);
-        intent.putExtra("score", sum);
+        intent.putExtra("score", sum+"");
 
         return fragment;
     }

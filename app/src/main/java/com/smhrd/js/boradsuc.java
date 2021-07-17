@@ -48,7 +48,7 @@ public class boradsuc extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_boradsuc);
 
-        tv_free_lol_name=findViewById(R.id.tv_free_lol_name);
+        tv_free_lol_name=findViewById(R.id.tv_re_lol_name);
         tv_free_text=findViewById(R.id.tv_free_text);
         tv_free_title=findViewById(R.id.tv_free_title);
 

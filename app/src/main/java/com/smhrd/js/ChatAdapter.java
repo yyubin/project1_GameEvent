@@ -40,7 +40,7 @@ public class ChatAdapter extends BaseAdapter {
         try {
             JSONObject jsonObject = new JSONObject(member);
             String myId = jsonObject.getString("lol_name");
-            if (convertView == null) { //xml가져온게 비어있으면
+
                 LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 if(dto.getId().equals(myId)){
                     convertView = inflater.inflate(R.layout.chatting2, parent, false);
@@ -48,7 +48,7 @@ public class ChatAdapter extends BaseAdapter {
                     convertView = inflater.inflate(R.layout.chatting, parent, false);
                 }
 
-            }
+
         } catch (JSONException e) {
             e.printStackTrace();
         }
